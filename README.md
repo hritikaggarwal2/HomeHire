@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### Deploying to GitHub pages
+
+Run `npm run-script deploy` to deploy the page to [GitHug Pages](https://hritikaggarwal2.github.io/HomeHire/)
+
 ### `yarn start`
 
 Runs the app in the development mode.\
