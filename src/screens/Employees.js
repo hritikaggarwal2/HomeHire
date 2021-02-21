@@ -1,5 +1,11 @@
+import BasicTable from "../components/EmployeeList"
+
 function Employees() {
-  return <div><p>Employees</p></div>;
+  return (
+    <div style={{ width: "90%" }}>
+      <BasicTable/>
+    </div>
+  );
 }
 
 export default Employees;
