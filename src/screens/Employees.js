@@ -1,5 +1,7 @@
+import EmployeeList from '../components/EmployeeList';
+
 function Employees() {
-  return <div><p>Employees</p></div>;
+  return EmployeeList();
 }
 
 export default Employees;

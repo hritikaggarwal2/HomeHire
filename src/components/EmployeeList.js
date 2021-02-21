@@ -32,7 +32,7 @@ function createData(name, role, department, location, type, startDate) {
 
 const rows = employJson.map(employee => createData(employee.name, employee.role, employee.department, employee.location, employee.type, employee.startDate));
 
-export default function BasicTable() {
+export default function EmployeeList() {
   const classes = useStyles();
 
   return (
