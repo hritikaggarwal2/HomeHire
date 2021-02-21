@@ -1,7 +1,7 @@
 import HeaderBar from "../components/HeaderBar.js";
 
 function Dashboard() {
-  return <HeaderBar />;
+  return <div><p>Dashboard</p></div>;
 }
 
 export default Dashboard;
