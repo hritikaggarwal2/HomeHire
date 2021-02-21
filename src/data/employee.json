@@ -1,0 +1,19 @@
+{   "employees": [
+    {
+        "name": "Azula",
+        "role": "Software Engineer",
+        "department": "Engineering",
+        "location": "Vancouver, BC",
+        "type": "Employee",
+        "startDate": "06/20/2020"
+      },
+      {
+        "name": "Zuko",
+        "role": "Product Designer",
+        "department": "Design",
+        "location": "Montreal, Quebec",
+        "type": "Contractor",
+        "startDate": "06/19/2020"
+      }
+    ]
+}
