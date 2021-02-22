@@ -171,7 +171,7 @@ export default function HeaderBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Button color="inherit">
+            <Button variant="contained">
               + New Employee
             </Button>
             <IconButton aria-label="show new notifications" color="inherit">
