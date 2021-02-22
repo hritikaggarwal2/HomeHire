@@ -1,11 +1,16 @@
 import "./App.css";
-import Dashboard from "./screens/Dashboard";
+import Login from "./screens/Login";
+import SignUp from "./screens/SignUp";
+
+// Firebase initialization
+import firebase from "firebase/app";
+import firebaseConfig from "./config/Firebase";
+firebase.initializeApp(firebaseConfig);
 
 function App() {
   return (
     <div className="App">
-      For testing purposes you can put your screens / components here and see
-      how it appears!
+      <Login />
     </div>
   );
 }
