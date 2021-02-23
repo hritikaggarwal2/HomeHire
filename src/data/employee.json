@@ -1,0 +1,19 @@
+{   "employees": [
+    {
+        "name": "Ryan Gosling",
+        "role": "Principal Engineer",
+        "department": "Engineering",
+        "location": "London, Ontario",
+        "type": "Employee",
+        "startDate": "06/20/2020"
+      },
+      {
+        "name": "Zuko",
+        "role": "Product Designer",
+        "department": "Design",
+        "location": "Montreal, Quebec",
+        "type": "Contractor",
+        "startDate": "06/19/2020"
+      }
+    ]
+}
