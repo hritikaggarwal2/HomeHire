@@ -104,7 +104,7 @@ export default function Checkout() {
                   variant="contained"
                   color="primary"
                   component={Link}
-                  to="/HomeHire"
+                  to="/"
                   className={classes.button}
                 >
                   Send For Review

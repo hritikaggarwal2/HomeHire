@@ -20,7 +20,7 @@ export default function Dashboard() {
     <div class="pageWithNav dashboard">
       <Grid container style={{ "padding-left": "2%", "padding-right": "2%" }}>
         <Grid item xs={12}>
-          <h2>Dashboard</h2>
+          <h1>Dashboard</h1>
           <Card style={{ "background-color": "#F5F5F5" }}>
             <Grid
               container
