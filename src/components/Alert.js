@@ -1,4 +1,4 @@
-import "../styles/common.css";
+// import "../styles/common.css";
 
 function Alert(props) {
   return (

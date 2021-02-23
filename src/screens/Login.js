@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { FormControl, FormHelperText, TextField } from "@material-ui/core";
 
 import firebase from "firebase/app";
 
-import "../styles/common.css";
+import "../styles/common.scss";
 import Alert from "../components/Alert";
 
 export default function Login() {
@@ -40,26 +41,44 @@ export default function Login() {
     <div className="Login">
       <h2>Log In</h2>
       <form className="formContainer" onSubmit={createAccount}>
-        <label>
-          <span>Email</span>
-          <input
+        <FormControl>
+          <TextField
+            classes={{
+              notchedOutline: "outlineFocus",
+              focused: "outlineFocus",
+            }}
             type="email"
             name="email"
+            aria-describedby="email-helper-text"
+            id="email-input"
+            label="Email"
+            variant="outlined"
             value={email}
             onChange={emailChange}
             required
           />
-        </label>
-        <label>
-          <span>Password</span>
-          <input
+          <FormHelperText id="email-helper-text">
+            We'll never share your email.
+          </FormHelperText>
+        </FormControl>
+
+        <FormControl>
+          <TextField
             type="password"
             name="password"
+            aria-describedby="pass-helper-text"
+            id="pass-input"
+            label="Password"
+            variant="outlined"
             value={pass}
             onChange={passChange}
             required
           />
-        </label>
+          <FormHelperText id="pass-helper-text">
+            Must be more than 8 characters
+          </FormHelperText>
+        </FormControl>
+
         <p className="link-forgot">Forgot Password?</p>
         {error ? <Alert msg={error} /> : null}
         <input type="submit" value="Get me in!" />
