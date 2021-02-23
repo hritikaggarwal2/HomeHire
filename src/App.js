@@ -1,5 +1,6 @@
 import "./App.css";
 
+import AddEmployee from "./screens/AddEmployee";
 import Dashboard from "./screens/Dashboard";
 import Employees from "./screens/Employees";
 import Payroll from "./screens/Payroll";
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route path="/EmployeeDetail">
             <EmployeeDetail />
+          </Route>
+          <Route path="/AddEmployee">
+            <AddEmployee />
           </Route>
         </Switch>
       </div>

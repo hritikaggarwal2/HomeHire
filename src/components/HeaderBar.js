@@ -4,7 +4,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -13,6 +12,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -171,9 +174,9 @@ export default function HeaderBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Button variant="contained">
-              + New Employee
-            </Button>
+            <Button variant="contained" component={Link} to="/AddEmployee">
+                  + New Employee
+              </Button>
             <IconButton aria-label="show new notifications" color="inherit">
               <Badge badgeContent={3} color="secondary">
                 <NotificationsIcon />

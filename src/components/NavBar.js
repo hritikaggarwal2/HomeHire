@@ -4,7 +4,7 @@ import "./NavBar.css"
 
 function NavBar() {
     return (
-        <div
+        <div class="navbar"
         style={{
             padding: 0,
             width: "10%",
