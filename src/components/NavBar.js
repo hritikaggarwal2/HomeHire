@@ -6,12 +6,15 @@ function NavBar() {
     return (
         <div
         style={{
-            padding: "10px",
+            padding: 0,
             width: "10%",
-            background: "#f0f0f0"
+            background: "#3f51b5"
         }}
         >
         <ul style={{ listStyleType: "none" }}>
+            <li>
+                <h3>HomeHire</h3>
+            </li>
             <li>
                 <Link to="/HomeHire">Dashboard</Link>
             </li>
