@@ -1,35 +1,27 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import "./NavBar.css"
+import { Link } from "react-router-dom";
+import "../styles/common.scss";
 
-function NavBar() {
-    return (
-        <div
-        style={{
-            padding: 0,
-            width: "10%",
-            background: "#3f51b5"
-        }}
-        >
-        <ul style={{ listStyleType: "none" }}>
-            <li>
-                <h3>HomeHire</h3>
-            </li>
-            <li>
-                <Link to="/HomeHire">Dashboard</Link>
-            </li>
-            <li>
-                <Link to="/Employees">Employees</Link>
-            </li>
-            <li>
-                <Link to="/Payroll">Payroll</Link>
-            </li>
-            <li>
-                <Link to="/Documents">Documents</Link>
-            </li>
-        </ul>
-        </div>
-    )
+export default function NavBar(props) {
+  return (
+    <div className="nav">
+      <ul>
+        <li>
+          <h3>HomeHire</h3>
+        </li>
+        <li className={props.index === 0 ? "primary-dark" : ""}>
+          <Link to="/">Dashboard</Link>
+        </li>
+        <li className={props.index === 1 ? "primary-dark" : ""}>
+          <Link to="/employees">Employees</Link>
+        </li>
+        <li className={props.index === 2 ? "primary-dark" : ""}>
+          <Link to="/payroll">Payroll</Link>
+        </li>
+        <li className={props.index === 3 ? "primary-dark" : ""}>
+          <Link to="/documents">Documents</Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
-
-export default NavBar;

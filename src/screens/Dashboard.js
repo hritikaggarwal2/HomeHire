@@ -1,26 +1,31 @@
-import HeaderBar from "../components/HeaderBar.js";
+import {
+  Card,
+  Grid,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemSecondaryAction,
+  ListItemText,
+  Button,
+} from "@material-ui/core";
 
-import { Card } from '@material-ui/core';
-import { Grid } from '@material-ui/core';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemText from '@material-ui/core/ListItemText';
-import Button from '@material-ui/core/Button';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import { AccountCircle } from "@material-ui/icons";
 
-import './Dashboard.css';
+import "./Dashboard.css";
 
-function Dashboard() {
+export default function Dashboard() {
   return (
-    <div class="dashboard" style={{ width: "90%"}}>
-      <HeaderBar />
+    <div class="dashboard">
       <Grid container style={{ "padding-left": "2%", "padding-right": "2%" }}>
         <Grid item xs={12}>
           <h2>Dashboard</h2>
           <Card style={{ "background-color": "#F5F5F5" }}>
-            <Grid container item spacing={3} style={{ "padding-left": "2%", "padding-right": "2%" }}>
+            <Grid
+              container
+              item
+              spacing={3}
+              style={{ "padding-left": "2%", "padding-right": "2%" }}
+            >
               <Grid item xs={3}>
                 <h4>Total team</h4>
                 <p class="big-number">3</p>
@@ -41,7 +46,7 @@ function Dashboard() {
           </Card>
         </Grid>
         <Grid container xs={12} spacing={3} alignItems="stretch">
-          <Grid item xs={6} >
+          <Grid item xs={6}>
             <h3>Activity</h3>
             <Card style={{ "background-color": "#F5F5F5", height: "85%" }}>
               activity stuff
@@ -53,7 +58,7 @@ function Dashboard() {
             </Grid>
             <Grid item xs={12}>
               <Card style={{ "background-color": "#F5F5F5", height: "100%" }}>
-                <List >
+                <List>
                   <ListItem>
                     <ListItemAvatar>
                       <AccountCircle />
@@ -107,5 +112,3 @@ function Dashboard() {
     </div>
   );
 }
-
-export default Dashboard;

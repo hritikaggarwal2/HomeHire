@@ -1,5 +1,7 @@
+@import "./constants";
+
 * {
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 body,
@@ -7,8 +9,153 @@ html {
   margin: 0;
 }
 
-.outlineFocus {
-  border-color: green;
+h1,
+h2,
+h3,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.primaryText {
+  color: $primary !important;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.primary-dark,
+.primary-dark a {
+  color: $primary-dark !important;
+}
+
+.pageWithNav {
+  width: (100vw - $nav-size);
+  margin-left: $nav-size;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerWithNav {
+  width: (100vw - $nav-size) !important;
+  margin-left: $nav-size;
+  background-color: #fefefe !important;
+  box-shadow: 0px 0px 0px #aaa !important;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 10px 0;
+}
+
+// NAV BAR
+.nav {
+  background: $primary;
+  width: $nav-size;
+  height: 100vh;
+  position: fixed;
+
+  h3 {
+    color: $light;
+    font-size: 30px;
+    padding: 5vw;
+    text-align: center;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    display: block;
+    margin: 30px 10px;
+    padding: 10px 15px;
+    border-left: 7px solid transparent;
+  }
+
+  a:hover {
+    border-left: 7px solid #fff;
+    padding: 10px 25px;
+  }
+
+  .primary-dark a:hover {
+    border-left: 7px solid transparent;
+    padding: 10px 15px;
+  }
+
+  li:not(:first-child) {
+    margin-left: 2.5vw;
+  }
+}
+
+.emps {
+  margin-top: 5%;
+
+  h1 {
+    color: $primary;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  table thead tr {
+    background: #ddd;
+  }
+}
+
+.userProfile,
+.emps {
+  .MuiTable-root {
+    width: 80%;
+  }
+
+  table {
+    margin: 0 10% 5% 10%;
+
+    tr {
+      margin: 25px 0;
+      background: #f4f4f4;
+      border-radius: 10px;
+      border: 10px solid #fff;
+
+      td {
+        border: none;
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.userProfile {
+  img {
+    width: 15vw;
+    border-radius: 100%;
+    margin: 20px;
+  }
+
+  & > div {
+    margin: 5% 5% 3% 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+
+    h1 {
+      padding-left: 14px;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      align-items: center;
+
+      li {
+        width: auto;
+      }
+    }
+  }
 }
 
 .SignUp,
@@ -19,8 +166,41 @@ html {
   align-items: center;
   flex-direction: column;
 
-  h2 {
-    margin: 0;
+  button,
+  input[type="submit"] {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 13px 45px;
+    background: transparent;
+    border: 2px solid $primary;
+    border-radius: 50px;
+    color: $primary;
+    font-size: 18px;
+    margin: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 90%;
+    transition: all 0.5s ease;
+  }
+
+  button:hover,
+  input[type="submit"]:hover {
+    background: $primary;
+    color: white;
+  }
+}
+
+.empty-btn {
+  color: $primary !important;
+  border: 0px !important;
+  position: relative;
+  top: 0px;
+
+  &:hover {
+    background-color: transparent !important;
+    color: $primary-dark !important;
+    top: 5px;
   }
 }
 
@@ -48,52 +228,3 @@ html {
   cursor: pointer;
   color: #1098f7;
 }
-
-button,
-input[type="submit"] {
-  background: none;
-  border: none;
-  outline: none;
-  padding: 13px 45px;
-  background: transparent;
-  border: 2px solid #ec5766;
-  border-radius: 50px;
-  color: #ec5766;
-  font-size: 18px;
-  margin: 15px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-button:hover,
-input[type="submit"]:hover {
-  background: #ec5766;
-  color: white;
-}
-
-/* 
-.formContainer label {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 15px;
-}
-
-.formContainer label span {
-    font-size: 16px;
-    text-align: left;
-    font-weight: 600;
-    color: #777;
-    margin-bottom: 5px;
-}
-
-.formContainer label input {
-    background: none;
-    border: none;
-    outline: none;
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 100%;
-    border-radius: 2px;
-}
- */

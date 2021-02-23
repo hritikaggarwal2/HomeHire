@@ -1,13 +1,43 @@
 import React, { useState } from "react";
-import { FormControl, FormHelperText, TextField } from "@material-ui/core";
+import {
+  FormControl,
+  FormHelperText,
+  TextField,
+  makeStyles,
+} from "@material-ui/core";
 
 import firebase from "firebase/app";
 
 import "../styles/common.scss";
 import Alert from "../components/Alert";
 
+import { useHistory } from "react-router-dom";
+
+const useStyles = makeStyles((theme) => ({
+  inputRoot: {
+    "& .Mui-focused": {
+      color: "#5D576B",
+    },
+    "& .MuiInputBase-root.Mui-focused fieldset.MuiOutlinedInput-notchedOutline": {
+      border: "2px solid #5D576B",
+    },
+    "& .MuiInputBase-root fieldset.MuiOutlinedInput-notchedOutline": {
+      "border-width": "2px",
+    },
+    "& .MuiInputBase-root input": {
+      color: "#5D576B",
+    },
+    "& .MuiInputBase-root:hover fieldset.MuiOutlinedInput-notchedOutline": {
+      "border-color": "rgba(0, 0, 0, 0.5);",
+    },
+  },
+}));
+
 export default function SignUp() {
+  const styleSheet = useStyles();
+
   const [email, setEmail] = useState("");
+  const history = useHistory();
   const [pass, setPass] = useState("");
   const [confirm, setConfirm] = useState("");
   const [error, setError] = useState("");
@@ -25,10 +55,6 @@ export default function SignUp() {
       setError("Password must be at least 8 characters long");
       return;
     }
-
-    console.log(email);
-    console.log(pass);
-    console.log(confirm);
 
     firebase
       .auth()
@@ -56,15 +82,20 @@ export default function SignUp() {
     setConfirm(e.target.value);
   }
 
+  function changePage() {
+    history.push({
+      pathname: "/login",
+    });
+  }
+
   return (
     <div className="SignUp">
-      <h2>Sign Up</h2>
+      <h1 className="primaryText">Sign Up</h1>
       <form className="formContainer" onSubmit={createAccount}>
         <FormControl>
           <TextField
             classes={{
-              notchedOutline: "outlineFocus",
-              focused: "outlineFocus",
+              root: styleSheet.inputRoot,
             }}
             type="email"
             name="email"
@@ -83,6 +114,9 @@ export default function SignUp() {
 
         <FormControl>
           <TextField
+            classes={{
+              root: styleSheet.inputRoot,
+            }}
             type="password"
             name="password"
             aria-describedby="pass-helper-text"
@@ -100,6 +134,9 @@ export default function SignUp() {
 
         <FormControl>
           <TextField
+            classes={{
+              root: styleSheet.inputRoot,
+            }}
             type="password"
             name="password"
             aria-describedby="pass-helper-text"
@@ -113,6 +150,12 @@ export default function SignUp() {
         </FormControl>
         {error ? <Alert msg={error} /> : null}
         <input type="submit" value="Create Account" />
+        <input
+          onClick={changePage}
+          className="empty-btn"
+          type="submit"
+          value="Log In Instead"
+        />
       </form>
     </div>
   );
