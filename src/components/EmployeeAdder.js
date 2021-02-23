@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ['Add a New Employee', 'NewHire Profile', 'NewHire Benefits', 'Offer Letter Complete!'];
+const steps = ['Employee Eligibility', 'New Hire Profile', 'New Hire Benefits', 'Offer Letter'];
 
 function getStepContent(step) {
   switch (step) {
@@ -83,7 +83,7 @@ export default function Checkout() {
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h4" align="center">
-            Start the Hiring Process
+            Add a new employee
           </Typography>
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map((label) => (
