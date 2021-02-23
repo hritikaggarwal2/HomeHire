@@ -10,6 +10,7 @@ import {
   Badge,
   MenuItem,
   Menu,
+  Link,
 } from "@material-ui/core";
 import {
   Search as SearchIcon,
@@ -209,6 +210,7 @@ export default function HeaderBar() {
               variant="contained"
               color="primary"
               startIcon={<AddIcon />}
+              component={Link} href="/addemployee"
             >
               New Employee
             </Button>

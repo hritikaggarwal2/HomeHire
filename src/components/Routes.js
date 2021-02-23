@@ -9,6 +9,7 @@ import Dashboard from "../screens/Dashboard";
 import Employees from "../screens/Employees";
 import Payroll from "../screens/Payroll";
 import Documents from "../screens/Documents";
+import AddEmployee from "../screens/AddEmployee";
 import EmployeeDetail from "../screens/EmployeeDetail";
 import SignUp from "../screens/SignUp";
 import Login from "../screens/Login";
@@ -42,6 +43,9 @@ function Routes() {
             </Route>
             <Route path="/profile">
               <EmployeeDetail />
+            </Route>
+            <Route path="/addemployee">
+              <AddEmployee />
             </Route>
             <Route path="*">
               <Dashboard />

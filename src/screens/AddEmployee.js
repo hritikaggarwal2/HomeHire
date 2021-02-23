@@ -3,8 +3,7 @@ import EmployeeAdder from "../components/EmployeeAdder.js";
 
 function AddEmployee() {
     return (
-        <div style={{ width: "90%"}}>
-            <HeaderBar />
+        <div class="pageWithNav" >
             <EmployeeAdder />
         </div>
     );
