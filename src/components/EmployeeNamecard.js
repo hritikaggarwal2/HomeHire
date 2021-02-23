@@ -20,7 +20,7 @@ import LanguageIcon from '@material-ui/icons/Language';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
 
-const useStyles1 = makeStyles({
+const useStyles = makeStyles({
   table: {  
     width:650
   },
@@ -35,30 +35,8 @@ const flexContainer = {
   padding: 0,
 };
 
-const employJson = employeeJson.employees;
-
-const useStyles = makeStyles({
-  tableHead: {
-    background: '#d3d3d3',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px'
-  },
-  table: {
-    minWidth: 650
-  }
-});
-
-function createData(name, role, department, location, type, startDate) {
-  return { name, role, department, location, type, startDate };
-}
-
-const rows = employJson.map(employee => createData(employee.name, employee.role, employee.department, employee.location, employee.type, employee.startDate));
-
 export default function EmployeeNamecard() {
-  const classes = useStyles1();
+  const classes = useStyles();
 
   return (
       <div className='table-container'>
