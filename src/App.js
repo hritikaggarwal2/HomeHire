@@ -10,6 +10,7 @@ import {
   Route,
 } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import EmployeeDetail from "./screens/EmployeeDetail";
 
 function App() {
   return (
@@ -30,8 +31,12 @@ function App() {
           <Route path="/Documents">
             <Documents />
           </Route>
+          <Route path="/EmployeeDetail">
+            <EmployeeDetail />
+          </Route>
         </Switch>
       </div>
+      
     </Router>
   );
 }

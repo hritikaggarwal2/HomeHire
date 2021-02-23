@@ -9,6 +9,11 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 import employeeJson from '../data/employee.json';
+import EmployeeDetail from "../screens/EmployeeDetail";
+import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
 
 const employJson = employeeJson.employees;
 
@@ -51,6 +56,7 @@ export default function EmployeeList() {
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.name} class={classes.row}>
+                
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
@@ -59,6 +65,7 @@ export default function EmployeeList() {
               <TableCell align="right">{row.location}</TableCell>
               <TableCell align="right">{row.type}</TableCell>
               <TableCell align="right">{row.startDate}</TableCell>
+              <Link color='secondary' to="/EmployeeDetail">Details</Link>
             </TableRow>
           ))}
         </TableBody>
