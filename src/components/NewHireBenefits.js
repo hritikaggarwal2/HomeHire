@@ -4,22 +4,12 @@ import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Grid from '@material-ui/core/Grid';
-
-const products = [
-  { name: 'Product 1', desc: 'A nice thing', price: '$9.99' },
-  { name: 'Product 2', desc: 'Another thing', price: '$3.45' },
-  { name: 'Product 3', desc: 'Something else', price: '$6.51' },
-  { name: 'Product 4', desc: 'Best thing of all', price: '$14.11' },
-  { name: 'Shipping', desc: '', price: 'Free' },
-];
-const addresses = ['1 Material-UI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
-const payments = [
-  { name: 'Card type', detail: 'Visa' },
-  { name: 'Card holder', detail: 'Mr John Smith' },
-  { name: 'Card number', detail: 'xxxx-xxxx-xxxx-1234' },
-  { name: 'Expiry date', detail: '04/2024' },
-];
+import {
+  Button,
+  Card,
+  CardActionArea,
+  Grid,
+} from '@material-ui/core/';
 
 const useStyles = makeStyles((theme) => ({
   listItem: {
@@ -38,49 +28,57 @@ export default function NewHireBenefits() {
 
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Order summary
+      <Typography variant="h6" gutterBottom align="center">
+        New Hire Benefits
       </Typography>
-      <List disablePadding>
-        {products.map((product) => (
-          <ListItem className={classes.listItem} key={product.name}>
-            <ListItemText primary={product.name} secondary={product.desc} />
-            <Typography variant="body2">{product.price}</Typography>
-          </ListItem>
-        ))}
-        <ListItem className={classes.listItem}>
-          <ListItemText primary="Total" />
-          <Typography variant="subtitle1" className={classes.total}>
-            $34.06
-          </Typography>
-        </ListItem>
-      </List>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom className={classes.title}>
-            Shipping
-          </Typography>
-          <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>{addresses.join(', ')}</Typography>
+      <p>
+        Choose a benefit package for your new employee. This is a required provision for
+        Canadian employees if you intend to hire in British Columbia.
+      </p>
+      <p>
+        You may choose one of our pre-designed packages or create a custom package depending on you
+        and your employee's specific needs.
+      </p>
+      <Grid container spacing={3} justify="space-around" align="stretch">
+        <Grid item xs={6}>
+          <Card style={{ height: '100%'}}>
+            <CardActionArea style={{ height: '100%'}}>
+              <Typography variant="h6" gutterBottom align="center">
+                Basic
+              </Typography>
+              <ul style={{ 'font-size': '1rem' }}>
+                <li>Annual leave: 2 weeks</li>
+                <li>Standard medical insurance</li>
+                <li>Internet Expenses</li>
+                <li>Parental leave</li>
+              </ul>
+            </CardActionArea>
+          </Card>
         </Grid>
-        <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom className={classes.title}>
-            Payment details
-          </Typography>
-          <Grid container>
-            {payments.map((payment) => (
-              <React.Fragment key={payment.name}>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.name}</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.detail}</Typography>
-                </Grid>
-              </React.Fragment>
-            ))}
-          </Grid>
+        <Grid item xs={6}>
+          <Card style={{ height: '100%'}}>
+            <CardActionArea style={{ height: '100%'}}>
+              <Typography variant="h6" gutterBottom align="center">
+                Basic+
+              </Typography>
+              <ul style={{ 'font-size': '1rem' }}>
+                <li>Annual leave: 3 weeks</li>
+                <li>Sick leave: 10 days</li>
+                <li>Private medical insurance</li>
+                <li>Internet Expenses</li>
+                <li>Extended parental leave</li>
+                <li>$250 Wellness reimbursement</li>
+              </ul>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item >
+          <Button variant="contained">
+            New Custom Package
+          </Button>
         </Grid>
       </Grid>
+
     </React.Fragment>
   );
 }
