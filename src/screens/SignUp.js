@@ -6,18 +6,33 @@ import firebase from "firebase/app";
 import "../styles/common.scss";
 import Alert from "../components/Alert";
 
-export default function Login() {
+export default function SignUp() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [confirm, setConfirm] = useState("");
   const [error, setError] = useState("");
 
   function createAccount(e) {
     e.preventDefault();
     setError("");
 
+    if (pass !== confirm) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    if (pass.length < 8) {
+      setError("Password must be at least 8 characters long");
+      return;
+    }
+
+    console.log(email);
+    console.log(pass);
+    console.log(confirm);
+
     firebase
       .auth()
-      .signInWithEmailAndPassword(email, pass)
+      .createUserWithEmailAndPassword(email, pass)
       .then((userCredential) => {
         // Signed in
         // Send user data to another page
@@ -37,9 +52,13 @@ export default function Login() {
     setPass(e.target.value);
   }
 
+  function confirmChange(e) {
+    setConfirm(e.target.value);
+  }
+
   return (
-    <div className="Login">
-      <h2>Log In</h2>
+    <div className="SignUp">
+      <h2>Sign Up</h2>
       <form className="formContainer" onSubmit={createAccount}>
         <FormControl>
           <TextField
@@ -79,9 +98,21 @@ export default function Login() {
           </FormHelperText>
         </FormControl>
 
-        <p className="link-forgot">Forgot Password?</p>
+        <FormControl>
+          <TextField
+            type="password"
+            name="password"
+            aria-describedby="pass-helper-text"
+            id="pass-input"
+            label="Confirm Password"
+            variant="outlined"
+            value={confirm}
+            onChange={confirmChange}
+            required
+          />
+        </FormControl>
         {error ? <Alert msg={error} /> : null}
-        <input type="submit" value="Get me in!" />
+        <input type="submit" value="Create Account" />
       </form>
     </div>
   );

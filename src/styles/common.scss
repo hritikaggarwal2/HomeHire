@@ -1,0 +1,99 @@
+* {
+  transition: all 0.2s ease;
+}
+
+body,
+html {
+  margin: 0;
+}
+
+.outlineFocus {
+  border-color: green;
+}
+
+.SignUp,
+.Login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.formContainer {
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px auto;
+
+  .MuiFormControl-root {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+
+    .MuiTextField-root {
+      width: 100%;
+    }
+  }
+}
+
+.link-forgot {
+  cursor: pointer;
+  color: #1098f7;
+}
+
+button,
+input[type="submit"] {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 13px 45px;
+  background: transparent;
+  border: 2px solid #ec5766;
+  border-radius: 50px;
+  color: #ec5766;
+  font-size: 18px;
+  margin: 15px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: #ec5766;
+  color: white;
+}
+
+/* 
+.formContainer label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 15px;
+}
+
+.formContainer label span {
+    font-size: 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.formContainer label input {
+    background: none;
+    border: none;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    border-radius: 2px;
+}
+ */
