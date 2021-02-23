@@ -1,10 +1,19 @@
 import "./App.css";
-import Login from "./screens/Login";
-import SignUp from "./screens/SignUp";
-import { MuiThemeProvider } from "@material-ui/core";
-import { theme } from "./constants/Theme";
 
-// Firebase initialization
+import Dashboard from "./screens/Dashboard";
+import Employees from "./screens/Employees";
+import Payroll from "./screens/Payroll";
+import Documents from "./screens/Documents";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import NavBar from "./components/NavBar";
+import EmployeeDetail from "./screens/EmployeeDetail";
+
+// firebase stuff
 import firebase from "firebase/app";
 import firebaseConfig from "./config/Firebase";
 
@@ -16,9 +25,30 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <SignUp />
-    </div>
+    <Router>
+      <div style={{ display: "flex", alignItems: "stretch", height: "100%" }}>
+        <NavBar></NavBar>
+
+        <Switch>
+          <Route path="/HomeHire">
+            <Dashboard />
+          </Route>
+          <Route path="/Employees">
+            <Employees />
+          </Route>
+          <Route path="/Payroll">
+            <Payroll />
+          </Route>
+          <Route path="/Documents">
+            <Documents />
+          </Route>
+          <Route path="/EmployeeDetail">
+            <EmployeeDetail />
+          </Route>
+        </Switch>
+      </div>
+      
+    </Router>
   );
 }
 
