@@ -1,0 +1,15 @@
+.dashboard h3 {
+    color: #000000
+}
+
+.dashboard h4{
+    margin: 0.2em;
+    text-align: center;
+}
+
+.dashboard .big-number {
+    text-align: center;
+    font-size: 3em;
+    margin: 0.1em;
+    font-weight: bold;
+}
