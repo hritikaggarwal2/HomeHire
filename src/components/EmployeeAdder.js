@@ -107,7 +107,7 @@ export default function Checkout() {
                   to="/HomeHire"
                   className={classes.button}
                 >
-                  Finish
+                  Send For Review
                 </Button>
               </div>
               </React.Fragment> :

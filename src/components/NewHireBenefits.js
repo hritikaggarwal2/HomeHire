@@ -42,11 +42,11 @@ export default function NewHireBenefits() {
       <Grid container spacing={3} justify="space-around" align="stretch">
         <Grid item xs={6}>
           <Card style={{ height: '100%'}}>
-            <CardActionArea style={{ height: '100%'}}>
+            <CardActionArea style={{ height: '100%', padding: '5%'}}>
               <Typography variant="h6" gutterBottom align="center">
                 Basic
               </Typography>
-              <ul style={{ 'font-size': '1rem' }}>
+              <ul style={{ 'font-size': '1rem', 'margin': '5%'}}>
                 <li>Annual leave: 2 weeks</li>
                 <li>Standard medical insurance</li>
                 <li>Internet Expenses</li>
@@ -57,11 +57,11 @@ export default function NewHireBenefits() {
         </Grid>
         <Grid item xs={6}>
           <Card style={{ height: '100%'}}>
-            <CardActionArea style={{ height: '100%'}}>
+            <CardActionArea style={{ height: '100%', padding: '5%'}}>
               <Typography variant="h6" gutterBottom align="center">
                 Basic+
               </Typography>
-              <ul style={{ 'font-size': '1rem' }}>
+              <ul style={{ 'font-size': '1rem' , width: '90%', 'margin': '5%'}}>
                 <li>Annual leave: 3 weeks</li>
                 <li>Sick leave: 10 days</li>
                 <li>Private medical insurance</li>
