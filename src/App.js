@@ -1,18 +1,13 @@
-import "./App.css";
-
-import AddEmployee from "./screens/AddEmployee";
-import Dashboard from "./screens/Dashboard";
-import Employees from "./screens/Employees";
-import Payroll from "./screens/Payroll";
-import Documents from "./screens/Documents";
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import NavBar from "./components/NavBar";
-import EmployeeDetail from "./screens/EmployeeDetail";
+
+// user provider
+import UserProvider from "./providers/UserProvider";
+
+// components
+import Routes from "./components/Routes";
+
+// css
+import "./styles/common.scss";
 
 // firebase stuff
 import firebase from "firebase/app";
@@ -26,33 +21,9 @@ function App() {
   }
 
   return (
-    <Router>
-      <div style={{ display: "flex", alignItems: "stretch", height: "100%" }}>
-        <NavBar></NavBar>
-
-        <Switch>
-          <Route path="/HomeHire">
-            <Dashboard />
-          </Route>
-          <Route path="/Employees">
-            <Employees />
-          </Route>
-          <Route path="/Payroll">
-            <Payroll />
-          </Route>
-          <Route path="/Documents">
-            <Documents />
-          </Route>
-          <Route path="/EmployeeDetail">
-            <EmployeeDetail />
-          </Route>
-          <Route path="/AddEmployee">
-            <AddEmployee />
-          </Route>
-        </Switch>
-      </div>
-      
-    </Router>
+    <UserProvider>
+      <Routes />
+    </UserProvider>
   );
 }
 

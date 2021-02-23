@@ -1,90 +1,102 @@
-import React from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
+import React, { useState } from "react";
 import {
-  BrowserRouter as Router,
-  Link
-} from "react-router-dom";
+  fade,
+  makeStyles,
+  AppBar,
+  Button,
+  Toolbar,
+  IconButton,
+  InputBase,
+  Badge,
+  MenuItem,
+  Menu,
+} from "@material-ui/core";
+import {
+  Search as SearchIcon,
+  AccountCircle,
+  Notifications as NotificationsIcon,
+  More as MoreIcon,
+  Add as AddIcon,
+} from "@material-ui/icons";
+
+// firebase
+import firebase from "firebase/app";
 
 const useStyles = makeStyles((theme) => ({
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
   search: {
-    position: 'relative',
+    position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+    backgroundColor: fade("#5D576B", 0.15),
+    "&:hover": {
+      backgroundColor: fade("#5D576B", 0.25),
+      transition: ".3s ease all",
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(5),
+      width: "40%",
     },
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#5D576B",
   },
   inputRoot: {
-    color: 'inherit',
+    color: "#5D576B",
+  },
+  button: {
+    backgroundColor: "transparent",
+    border: "1px solid #5D576B",
+    color: "#5D576B",
+    boxShadow: "none",
+    "&:hover": {
+      border: "1px solid #5D576B",
+      backgroundColor: "#5D576B",
+      color: "white",
+    },
+  },
+  iconColor: {
+    color: "#5D576B",
+    "&:hover": {
+      color: "#383541",
+    },
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
     },
   },
   sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
     },
   },
   sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
+    display: "flex",
+    [theme.breakpoints.up("md")]: {
+      display: "none",
     },
   },
 }));
 
 export default function HeaderBar() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -102,39 +114,54 @@ export default function HeaderBar() {
     handleMobileMenuClose();
   };
 
+  function handleLogout() {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log("Can't log out");
+      });
+  }
+
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const menuId = 'primary-search-account-menu';
+  const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={menuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleLogout}>Logout</MenuItem>
     </Menu>
   );
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
+        <IconButton
+          aria-label="show 11 new notifications"
+          color="inherit"
+          className={classes.iconColor}
+        >
           <Badge badgeContent={11} color="secondary">
             <NotificationsIcon />
           </Badge>
@@ -147,6 +174,7 @@ export default function HeaderBar() {
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
+          className={classes.iconColor}
         >
           <AccountCircle />
         </IconButton>
@@ -156,8 +184,8 @@ export default function HeaderBar() {
   );
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="static">
+    <>
+      <AppBar className="headerWithNav" position="static">
         <Toolbar>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -169,15 +197,27 @@ export default function HeaderBar() {
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <div className={classes.grow} />
+
+          <div className="grow" />
+
           <div className={classes.sectionDesktop}>
-            <Button variant="contained" component={Link} to="/AddEmployee">
-                  + New Employee
-              </Button>
-            <IconButton aria-label="show new notifications" color="inherit">
+            <Button
+              className={classes.button}
+              variant="contained"
+              color="primary"
+              startIcon={<AddIcon />}
+            >
+              New Employee
+            </Button>
+
+            <IconButton
+              aria-label="show new notifications"
+              color="inherit"
+              className={classes.iconColor}
+            >
               <Badge badgeContent={3} color="secondary">
                 <NotificationsIcon />
               </Badge>
@@ -189,6 +229,7 @@ export default function HeaderBar() {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
+              className={classes.iconColor}
             >
               <AccountCircle />
             </IconButton>
@@ -208,6 +249,6 @@ export default function HeaderBar() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-    </div>
+    </>
   );
 }

@@ -1,12 +1,43 @@
 import React, { useState } from "react";
-import { FormControl, FormHelperText, TextField } from "@material-ui/core";
+import {
+  FormControl,
+  FormHelperText,
+  TextField,
+  makeStyles,
+} from "@material-ui/core";
 
 import firebase from "firebase/app";
 
 import "../styles/common.scss";
 import Alert from "../components/Alert";
 
+import { useHistory } from "react-router-dom";
+
+const useStyles = makeStyles((theme) => ({
+  inputRoot: {
+    color: "#5D576B !important",
+    "& .Mui-focused": {
+      color: "#5D576B",
+    },
+    "& .MuiInputBase-root.Mui-focused fieldset.MuiOutlinedInput-notchedOutline": {
+      border: "2px solid #5D576B",
+    },
+    "& .MuiInputBase-root fieldset.MuiOutlinedInput-notchedOutline": {
+      "border-width": "2px",
+    },
+    "& .MuiInputBase-root input": {
+      color: "#5D576B",
+    },
+    "& .MuiInputBase-root:hover fieldset.MuiOutlinedInput-notchedOutline": {
+      "border-color": "rgba(0, 0, 0, 0.5);",
+    },
+  },
+}));
+
 export default function Login() {
+  const styleSheet = useStyles();
+  const history = useHistory();
+
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
@@ -37,15 +68,20 @@ export default function Login() {
     setPass(e.target.value);
   }
 
+  function changePage() {
+    history.push({
+      pathname: "/signup",
+    });
+  }
+
   return (
     <div className="Login">
-      <h2>Log In</h2>
+      <h1 className="primaryText">Log In</h1>
       <form className="formContainer" onSubmit={createAccount}>
         <FormControl>
           <TextField
             classes={{
-              notchedOutline: "outlineFocus",
-              focused: "outlineFocus",
+              root: styleSheet.inputRoot,
             }}
             type="email"
             name="email"
@@ -64,6 +100,9 @@ export default function Login() {
 
         <FormControl>
           <TextField
+            classes={{
+              root: styleSheet.inputRoot,
+            }}
             type="password"
             name="password"
             aria-describedby="pass-helper-text"
@@ -79,9 +118,14 @@ export default function Login() {
           </FormHelperText>
         </FormControl>
 
-        <p className="link-forgot">Forgot Password?</p>
         {error ? <Alert msg={error} /> : null}
         <input type="submit" value="Get me in!" />
+        <input
+          onClick={changePage}
+          className="empty-btn"
+          type="submit"
+          value="Create Account Instead"
+        />
       </form>
     </div>
   );
