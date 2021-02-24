@@ -16,9 +16,11 @@ import {
   Language as LanguageIcon,
   LocationOn as LocationOnIcon,
   QueryBuilder as QueryBuilderIcon,
+  Close as CloseIcon
 } from "@material-ui/icons";
 
-import { useLocation } from "react-router-dom";
+
+import { useLocation, useHistory } from "react-router-dom";
 
 import Loading from "./Loading";
 
@@ -38,6 +40,7 @@ export default function EmployeeDetail() {
   const location = useLocation();
   const userId = location.state.key;
   const [data, setData] = useState(null);
+  const history = useHistory();
 
   useEffect(() => {
     db.collection("employees")
@@ -63,7 +66,10 @@ export default function EmployeeDetail() {
           <div>
             <img src={img} alt="user profile" />
             <div>
-              <h1>{data.full_name}</h1>
+                <ListItemIcon className="closeButton" onClick={() => history.goBack()}>
+                    <CloseIcon fontSize="large" />
+                </ListItemIcon>
+              <h1>{data.full_name} </h1>
               <List>
                 <ListItem>
                   <ListItemIcon>
