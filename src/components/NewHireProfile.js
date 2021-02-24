@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 
 export default function NewHireProfile() {
   return (
@@ -53,6 +54,40 @@ export default function NewHireProfile() {
           </Typography>
           <TextField
             fullWidth
+            label="Mailing Address"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Typography>
+            Job Title
+          </Typography>
+          <TextField
+            fullWidth
+            label="Job Title"
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography>
+            Salary on Offer
+          </Typography>
+          <TextField required label="Amount in USD" fullWidth />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography>
+            Signing Bonus
+          </Typography>
+          <TextField
+            label="Amount in USD"
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Typography>
+            Start Date
+          </Typography>
+          <TextField
+            fullWidth
+            label="mm/dd/yyyy"
           />
         </Grid>
         <Grid item xs={6}>

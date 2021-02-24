@@ -28,7 +28,7 @@ export default function NewHireConfirmation() {
 
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom align="center">
+      <Typography variant="h5" gutterBottom align="center">
         Offer letter draft complete!
       </Typography>
       <p>

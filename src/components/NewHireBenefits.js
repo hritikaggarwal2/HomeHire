@@ -8,6 +8,7 @@ import {
   Button,
   Card,
   CardActionArea,
+  CardActions,
   Grid,
 } from '@material-ui/core/';
 
@@ -28,7 +29,7 @@ export default function NewHireBenefits() {
 
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom align="center">
+      <Typography variant="h5" gutterBottom align="center">
         New Hire Benefits
       </Typography>
       <p>
