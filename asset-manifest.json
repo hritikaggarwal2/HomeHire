@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/HomeHire/static/css/main.a185d2c5.chunk.css",
-    "main.js": "/HomeHire/static/js/main.b3125cf0.chunk.js",
-    "main.js.map": "/HomeHire/static/js/main.b3125cf0.chunk.js.map",
+    "main.js": "/HomeHire/static/js/main.19acc892.chunk.js",
+    "main.js.map": "/HomeHire/static/js/main.19acc892.chunk.js.map",
     "runtime-main.js": "/HomeHire/static/js/runtime-main.fb4e8b2b.js",
     "runtime-main.js.map": "/HomeHire/static/js/runtime-main.fb4e8b2b.js.map",
-    "static/js/2.dd6a39ef.chunk.js": "/HomeHire/static/js/2.dd6a39ef.chunk.js",
-    "static/js/2.dd6a39ef.chunk.js.map": "/HomeHire/static/js/2.dd6a39ef.chunk.js.map",
+    "static/js/2.1cbefbf9.chunk.js": "/HomeHire/static/js/2.1cbefbf9.chunk.js",
+    "static/js/2.1cbefbf9.chunk.js.map": "/HomeHire/static/js/2.1cbefbf9.chunk.js.map",
     "static/js/3.159f2ae6.chunk.js": "/HomeHire/static/js/3.159f2ae6.chunk.js",
     "static/js/3.159f2ae6.chunk.js.map": "/HomeHire/static/js/3.159f2ae6.chunk.js.map",
     "index.html": "/HomeHire/index.html",
     "static/css/main.a185d2c5.chunk.css.map": "/HomeHire/static/css/main.a185d2c5.chunk.css.map",
-    "static/js/2.dd6a39ef.chunk.js.LICENSE.txt": "/HomeHire/static/js/2.dd6a39ef.chunk.js.LICENSE.txt",
+    "static/js/2.1cbefbf9.chunk.js.LICENSE.txt": "/HomeHire/static/js/2.1cbefbf9.chunk.js.LICENSE.txt",
     "static/media/user.4e1103b4.jpg": "/HomeHire/static/media/user.4e1103b4.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.fb4e8b2b.js",
-    "static/js/2.dd6a39ef.chunk.js",
+    "static/js/2.1cbefbf9.chunk.js",
     "static/css/main.a185d2c5.chunk.css",
-    "static/js/main.b3125cf0.chunk.js"
+    "static/js/main.19acc892.chunk.js"
   ]
 }
