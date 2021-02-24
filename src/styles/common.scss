@@ -12,6 +12,7 @@ html {
 h1,
 h2,
 h3,
+h4,
 ul {
   margin: 0;
 }
@@ -54,6 +55,21 @@ ul {
   padding: 10px 0;
 }
 
+// LOADING
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  h1 {
+    color: $primary;
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
 // NAV BAR
 .nav {
   background: $primary;
@@ -94,7 +110,6 @@ ul {
 }
 
 .dashboard {
-
   h1 {
     color: $primary;
     font-size: 30px;
@@ -126,6 +141,138 @@ ul {
 
   table thead tr {
     background: #ddd;
+  }
+
+  table tbody tr {
+    cursor: pointer;
+    background-color: #f4f4f4;
+
+    &:hover {
+      background-color: $primary-light;
+    }
+  }
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto 50px auto;
+}
+
+.addEmp {
+  margin-top: 5%;
+
+  h1 {
+    color: $primary;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    color: $primary;
+    font-size: 25px;
+    padding: 1.5vw;
+    text-align: center;
+  }
+
+  h4 {
+    color: $primary;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 25px;
+  }
+
+  .container > p {
+    text-align: center;
+  }
+
+  .stepper {
+    margin: 0 10%;
+    color: $primary;
+  }
+
+  .MuiStepIcon-root.MuiStepIcon-completed,
+  .MuiStepIcon-root.MuiStepIcon-active {
+    color: $primary;
+  }
+
+  .allButtons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3%;
+  }
+
+  .MuiInput-underline:after {
+    border-color: $primary !important;
+  }
+
+  .button {
+    width: 150px;
+    line-height: 30px;
+    border: 2px solid #ccc;
+  }
+
+  button.nxt {
+    margin-top: 3px;
+    margin-left: 1px;
+    border: 2px solid $primary;
+    background: transparent;
+    color: $primary;
+  }
+
+  button.nxt:hover {
+    background: $primary;
+    color: #fff;
+  }
+
+  .benefits {
+    h4 {
+      text-align: center;
+    }
+
+    .MuiCard-root {
+      height: 100%;
+    }
+
+    ul {
+      font-size: 1rem;
+      padding: 3%;
+      text-align: left;
+
+      li {
+        padding: 5px;
+      }
+    }
+  }
+
+  .review {
+    .MuiCard-root {
+      padding: 20px;
+    }
+
+    .button {
+      width: 250px;
+      line-height: 30px;
+      border: 2px solid #ccc;
+    }
+
+    .MuiButton-containedPrimary {
+      width: 150px;
+      background: $primary;
+      color: #fff;
+    }
+  }
+
+  .MuiButton-containedPrimary:hover {
+    background: $primary;
+    color: #fff;
+  }
+
+  .MuiButton-containedPrimary {
+    background: transparent;
+    color: $primary;
+    width: 250px;
+    border: 2px solid $primary;
   }
 }
 

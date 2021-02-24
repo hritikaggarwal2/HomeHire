@@ -1,66 +1,57 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
 import {
   Button,
   Card,
   CardActionArea,
   Grid,
-  Link,
   Typography,
-  IconButton,
-} from '@material-ui/core/';
-import AssignmentIcon from '@material-ui/icons/Assignment';
+  Icon,
+} from "@material-ui/core/";
 
-const useStyles = makeStyles((theme) => ({
-  listItem: {
-    padding: theme.spacing(1, 0),
-  },
-  total: {
-    fontWeight: 700,
-  },
-  title: {
-    marginTop: theme.spacing(2),
-  },
-}));
+import { Assignment as AssignmentIcon } from "@material-ui/icons/";
 
 export default function NewHireConfirmation() {
-  const classes = useStyles();
-
   return (
-    <React.Fragment>
-      <Typography variant="h5" gutterBottom align="center">
-        Offer letter draft complete!
-      </Typography>
+    <div className="container review">
+      <h3>Offer letter draft complete!</h3>
       <p>
-        Please review the initial offer draft and confirm.
-        We will review your draft shortly and get back to you within 24 hours.
+        Please review the initial offer draft and confirm. We will review your
+        draft shortly and get back to you within 24 hours.
       </p>
       <div>
         <Grid container>
           <Grid item xs={12}>
-            <h3>Offer document</h3>
+            <h3>Offer documents</h3>
           </Grid>
           <Grid item container xs={12} component={Card}>
-            <Grid item xs={2} component={CardActionArea}>
-              <IconButton><AssignmentIcon fontSize="large" /></IconButton>
+            <Grid item xs={2}>
+              <Icon clickable={false}>
+                <AssignmentIcon fontSize="large" />
+              </Icon>
             </Grid>
             <Grid item xs={10} sm={6}>
-              <Typography >
-                Offer Draft
-              </Typography>
-              <Typography color="textSecondary" >
+              <Typography>Offer Draft</Typography>
+              <Typography color="textSecondary">
                 Date created: 2/24/2021
-            </Typography>
+              </Typography>
             </Grid>
-            <Grid container item xs={4} justify="space-around" alignItems="center">
-              <Grid item component={Button} variant="contained" >View</Grid>
-              <Grid item component={Button} variant="contained" color="primary">Download</Grid>
-              
+            <Grid
+              container
+              item
+              xs={4}
+              justify="space-around"
+              alignItems="center"
+            >
+              <Grid item component={Button} variant="contained">
+                View
+              </Grid>
+              <Grid item component={Button} variant="contained" color="primary">
+                Download
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
       </div>
-
-    </React.Fragment>
+    </div>
   );
 }

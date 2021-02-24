@@ -10,16 +10,16 @@ export default function NavBar(props) {
           <h3>GoGlobal</h3>
         </li>
         <li className={props.index === 0 ? "primary-dark" : ""}>
-          <Link to="/">Dashboard</Link>
+          <Link to="./">Dashboard</Link>
         </li>
         <li className={props.index === 1 ? "primary-dark" : ""}>
-          <Link to="/employees">Employees</Link>
+          <Link to="./employees">Employees</Link>
         </li>
         <li className={props.index === 2 ? "primary-dark" : ""}>
-          <Link to="/payroll">Payroll</Link>
+          <Link to="./payroll">Payroll</Link>
         </li>
         <li className={props.index === 3 ? "primary-dark" : ""}>
-          <Link to="/documents">Documents</Link>
+          <Link to="./documents">Documents</Link>
         </li>
       </ul>
     </div>

@@ -57,7 +57,7 @@ function Routes() {
               <SignUp />
             </Route>
 
-            <Route path="*">
+            <Route path="/*">
               <Login />
             </Route>
           </Switch>

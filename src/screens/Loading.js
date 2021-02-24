@@ -4,8 +4,8 @@ import "../styles/common.scss";
 
 export default function Login() {
   return (
-    <div>
-      <h1>Loading</h1>
+    <div className="loading">
+      <h1>Loading...</h1>
     </div>
   );
 }
