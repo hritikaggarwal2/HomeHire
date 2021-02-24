@@ -44,7 +44,7 @@ export default function NewHireConfirmation() {
             <Grid item xs={2} component={CardActionArea}>
               <IconButton><AssignmentIcon fontSize="large" /></IconButton>
             </Grid>
-            <Grid item xs={10} sm={7}>
+            <Grid item xs={10} sm={6}>
               <Typography >
                 Offer Draft
               </Typography>
@@ -52,10 +52,10 @@ export default function NewHireConfirmation() {
                 Date created: 2/24/2021
             </Typography>
             </Grid>
-            <Grid container item xs={3} justify="space-around" alignItems="center">
-              <Grid item component={Button} variant="contained">Download</Grid>
-              <Grid item xs={12}>{/* hacky spacing force */}</Grid>
-              <Grid item component={Link}>View</Grid>
+            <Grid container item xs={4} justify="space-around" alignItems="center">
+              <Grid item component={Button} variant="contained" >View</Grid>
+              <Grid item component={Button} variant="contained" color="primary">Download</Grid>
+              
             </Grid>
           </Grid>
         </Grid>
