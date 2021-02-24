@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/HomeHire/static/css/main.a185d2c5.chunk.css",
-    "main.js": "/HomeHire/static/js/main.b14d2968.chunk.js",
-    "main.js.map": "/HomeHire/static/js/main.b14d2968.chunk.js.map",
+    "main.js": "/HomeHire/static/js/main.b3125cf0.chunk.js",
+    "main.js.map": "/HomeHire/static/js/main.b3125cf0.chunk.js.map",
     "runtime-main.js": "/HomeHire/static/js/runtime-main.fb4e8b2b.js",
     "runtime-main.js.map": "/HomeHire/static/js/runtime-main.fb4e8b2b.js.map",
     "static/js/2.dd6a39ef.chunk.js": "/HomeHire/static/js/2.dd6a39ef.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.fb4e8b2b.js",
     "static/js/2.dd6a39ef.chunk.js",
     "static/css/main.a185d2c5.chunk.css",
-    "static/js/main.b14d2968.chunk.js"
+    "static/js/main.b3125cf0.chunk.js"
   ]
 }
