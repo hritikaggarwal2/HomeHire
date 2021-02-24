@@ -41,6 +41,10 @@ ul {
   flex-direction: column;
 }
 
+.closeButton {
+  float: right;
+}
+
 .headerWithNav {
   width: (100vw - $nav-size) !important;
   margin-left: $nav-size;
