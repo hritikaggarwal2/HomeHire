@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import {
   Card,
   Divider,
@@ -15,8 +16,31 @@ import LaunchIcon from '@material-ui/icons/Launch';
 
 import "./Dashboard.css";
 
-export default function Dashboard() {
-  return (
+
+export default class Dashboard extends React.Component {
+  state = {
+    numOnboarding: 1
+  }
+
+  componentDidMount() {
+
+    let addEmployee = false;
+    if (this.props.location.state) {
+      addEmployee = this.props.location.state.addEmployee;
+    }
+    if (addEmployee) {
+      this.setState((state) => {
+        // Important: read `state` instead of `this.state` when updating.
+        return {numOnboarding: state.numOnboarding + 1}
+      });
+    }
+  }
+  
+  render() {
+    let numOnboarding = this.state.numOnboarding;
+    let numHired = 2;
+    let numTotal = numOnboarding + numHired;
+    return (
     <div class="pageWithNav dashboard">
       <Grid container style={{ "padding-left": "2%", "padding-right": "2%" }}>
         <Grid item xs={12}>
@@ -34,11 +58,11 @@ export default function Dashboard() {
               </Grid>
               <Grid item xs={3}>
                 <h4>Total employees</h4>
-                <p class="big-number">3</p>
+                <p class="big-number">{numTotal}</p>
               </Grid>
               <Grid item xs={3}>
                 <h4>Currently onboarding</h4>
-                <p class="big-number">2</p>
+                <p class="big-number">{numOnboarding}</p>
               </Grid>
               <Grid item xs={3}>
                 <h4>Needs attention</h4>
@@ -164,6 +188,6 @@ export default function Dashboard() {
           </Grid>
         </Grid>
       </Grid>
-    </div>
-  );
+    </div>);
+  }
 }

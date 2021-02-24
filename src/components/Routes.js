@@ -47,9 +47,7 @@ function Routes() {
             <Route path="/addemployee">
               <AddEmployee />
             </Route>
-            <Route path="*">
-              <Dashboard />
-            </Route>
+            <Route path="*" component={Dashboard} />
           </Switch>
         </Router>
       ) : (

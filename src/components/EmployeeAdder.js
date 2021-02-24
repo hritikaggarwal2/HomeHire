@@ -104,7 +104,12 @@ export default function Checkout() {
                   variant="contained"
                   color="primary"
                   component={Link}
-                  to="/"
+                  to={{
+                    pathname: '/',
+                    state: {
+                      addEmployee: true
+                    },
+                  }}
                   className={classes.button}
                 >
                   Send For Review
