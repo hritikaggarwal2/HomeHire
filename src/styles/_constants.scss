@@ -4,8 +4,16 @@ $primary-light: #bbb6c7;
 $primary: #5d576b;
 $primary-dark: #312a42;
 $light: #fffae3;
+$gray-light: #EFEFEF;
+$gray: #AAA;
 
 $save: #ec5766;
 
 // Sizes
 $nav-size: 20vw;
+
+:export {
+    primary-light: #{$primary-light};
+    primary: #{$primary};
+    primary-dark: #{$primary-dark};
+}

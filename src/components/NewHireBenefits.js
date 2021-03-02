@@ -1,55 +1,112 @@
 import React from "react";
-import { Button, Card, CardActionArea, Grid } from "@material-ui/core/";
+import {Container, Row, Col, Card, Button} from "react-bootstrap";
 
 export default function NewHireBenefits() {
   return (
     <div className="container benefits">
-      <h3>New Hire Benefits</h3>
+      <h3>Choose NewHire Benefits</h3>
       <p>
-        Choose a benefit package for your new employee. This is a required
-        provision for Canadian employees if you intend to hire in British
-        Columbia.
+        A comprehensive benefits package is required for employees in B.C, <br/>
+        you may choose one of our pre-designed packages or create a custom package.
       </p>
       <p>
-        You may choose one of our pre-designed packages or create a custom
-        package depending on you and your employee's specific needs.
+        Minerva's partnerships help you provide the best value packages to your employees!
       </p>
-      <br />
-      <Grid container spacing={3} justify="space-around" align="stretch">
-        <Grid item xs={6}>
-          <Card>
-            <CardActionArea>
-              <h4>Basic</h4>
-              <ul>
-                <li>Annual leave: 2 weeks</li>
-                <li>Standard medical insurance</li>
-                <li>Internet Expenses</li>
-                <li>Parental leave</li>
-              </ul>
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={6}>
-          <Card>
-            <CardActionArea>
-              <h4>Basic+</h4>
-              <ul>
-                <li>Annual leave: 3 weeks</li>
-                <li>Sick leave: 10 days</li>
-                <li>Private medical insurance</li>
-                <li>Internet Expenses</li>
-                <li>Extended parental leave</li>
-                <li>$250 Wellness reimbursement</li>
-              </ul>
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item>
-          <Button variant="contained button btn-add">
-            Create New Custom Package
-          </Button>
-        </Grid>
-      </Grid>
+      <br/>
+      <Container>
+        <Row>
+        <Card className="bencard" style={{ width: '100%' }}>
+          <Row>
+            <Col sm={3}>
+            <div className="bencardhead">
+              <h1>Basic</h1>
+              <h2>Minimum requirement</h2>
+              {/* <Button>Hi</Button> */}
+            </div>
+            </Col>
+            <Col sm={4}>
+            <div className="bencardcontent">
+              <h4>Annual Leave</h4>
+              <h3>2 weeks</h3>
+              <h4>Medical insurance</h4>
+              <h3>Standard</h3>
+              <h4>Maternity / Paternity Leave</h4>
+              <h3>Standard</h3>
+            </div>
+            </Col>
+            <Col sm={4}>
+            <div className="bencardcontent">
+              <h4>Monthly Reimbursement</h4>
+              <h3>$60 internet</h3>
+            </div>
+            </Col>
+            <Col sm={1}>
+            <div className="bencardend">
+              <a>View All</a>
+            </div>
+            </Col>
+          </Row>
+        </Card>
+        </Row>
+        <br/>
+        <Row>
+        <Card className="bencard" style={{ width: '100%' }}>
+          <Row>
+            <Col sm={3}>
+            <div className="bencardhead">
+              <h1>Standard</h1>
+              <h2>Standard package</h2>
+            </div>
+            </Col>
+            <Col sm={4}>
+            <div className="bencardcontent">
+              <h4>Annual Leave</h4>
+              <h3>3 weeks</h3>
+              <h4>Medical insurance</h4>
+              <h3>Private</h3>
+              <h4>Maternity / Paternity Leave</h4>
+              <h3>Extended</h3>
+            </div>
+            </Col>
+            <Col sm={4}>
+            <div className="bencardcontent">
+              <h4>Monthly Reimbursement</h4>
+              <h3>$60 internet</h3>
+              <h4>Annual Reimbursement</h4>
+              <h3>$250 wellness</h3>
+            </div>
+            </Col>
+            <Col sm={1}>
+            <div className="bencardend">
+              <a>View All</a>
+            </div>
+            </Col>
+          </Row>
+        </Card>
+        </Row>
+        <br/>
+        <Row>
+        <Card className="bencard" style={{ width: '100%' }}>
+          <Row>
+            <Col sm={3}>
+            <div className="bencardhead">
+              <h1>Custom</h1>
+              <h2>Customize your package</h2>
+            </div>
+            </Col>
+            <Col sm={8}>
+            <div className="bencardcontent">
+              <div className="bencardcustom">
+                  <p>Choose template or add benefits</p>
+              </div>
+            </div>
+            </Col>
+            <Col sm={1}>
+            </Col>
+          </Row>
+        </Card>
+        </Row>
+      </Container>
     </div>
   );
 }
