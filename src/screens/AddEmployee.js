@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Stepper, Step, StepLabel, Button } from "@material-ui/core";
+import Stepper from "react-stepper-horizontal";
+import Button from "react-bootstrap/Button";
 
 import { Link } from "react-router-dom";
 
@@ -46,12 +47,8 @@ function AddEmployee() {
   return (
     <div className="pageWithNav addEmp">
       <h1>Add New Employee</h1>
-      <Stepper activeStep={activeStep} className="stepper">
-        {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel>{label}</StepLabel>
-          </Step>
-        ))}
+      <Stepper activeStep={activeStep} className="stepper" 
+      steps={ [{title: 'Employee Eligibility'}, {title: 'New Hire Profile'}, {title: 'New Hire Benefits'}, {title: 'Offer Letter'}] }>
       </Stepper>
 
       {getStepContent(activeStep)}
