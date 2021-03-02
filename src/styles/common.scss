@@ -110,23 +110,54 @@ ul {
 }
 
 .dashboard {
-  h1 {
-    color: $primary;
-    font-size: 30px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
 
-  h3 {
+  h1, h2, h3 {
     color: $primary;
-    font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
 
-  h4 {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
+    text-align: center
+  }
+
+  .big-number {
+    text-align: center;
+    font-size: 3em;
+    margin: 0.1em;
+    font-weight: bold;
+    color: $primary;
+  }
+
+  .shaded-background {
+    background-color: $primary-light;
+  }
+
+  .top10 {
     margin-top: 10px;
   }
+
+  .top20 {
+    margin-top: 20px;
+  }
+
+  .full-height {
+    height: 100%;
+  }
+
+  .list-group-item {
+    background-color: $primary-light;
+  }
+
 }
 
 .emps {
@@ -414,3 +445,5 @@ ul {
   cursor: pointer;
   color: #1098f7;
 }
+
+@import "~bootstrap/scss/bootstrap";
