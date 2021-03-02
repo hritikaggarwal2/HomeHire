@@ -1,11 +1,13 @@
 import React from "react";
 
 import {
+  Button,
   Card,
   Col,
   Container,
+  ListGroup,
   Row,
-  Table
+  Table,
 } from 'react-bootstrap';
 
 export default class Dashboard extends React.Component {
@@ -73,7 +75,7 @@ export default class Dashboard extends React.Component {
 
 function PayrollCard(props) {
   return(
-    <Card>
+    <Card className="full-height">
       <Card.Body>
         <Card.Title>
           Payroll for March 2021
@@ -123,6 +125,32 @@ function OnboardingCard(props) {
       <Card.Body>
         <Row>
           <Card.Title>Onboarding Status</Card.Title>
+          <Table hover size="sm">
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Status</th>
+                <th> </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jamie Cho</td>
+                <td>Reviewing offer</td>
+                <td><Button variant="outline-dark" size="sm">View</Button></td>
+              </tr>
+              <tr>
+                <td>Jamie Cho</td>
+                <td>Reviewing offer</td>
+                <td><Button variant="outline-dark" size="sm">View</Button></td>
+              </tr>
+              <tr>
+                <td>Jamie Cho</td>
+                <td>Reviewing offer</td>
+                <td><Button variant="outline-dark" size="sm">View</Button></td>
+              </tr>
+            </tbody>
+          </Table>
         </Row>
       </Card.Body>
     </Card>
@@ -133,9 +161,15 @@ function NotificationsCard(props) {
   return(
     <Card className="shaded-background top10">
       <Card.Body>
-        <Row>
           <Card.Title>Notifications</Card.Title>
-        </Row>
+          <ListGroup variant="flush" >
+            <ListGroup.Item action >
+              Minerva is expanding to Ontario in ...
+            </ListGroup.Item>
+            <ListGroup.Item action >
+              See some of our latest featured hires ...
+            </ListGroup.Item>
+          </ListGroup>
       </Card.Body>
     </Card>
   );
