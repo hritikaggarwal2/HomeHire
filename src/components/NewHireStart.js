@@ -29,8 +29,7 @@ export default function NewHireStart() {
 
   return (
     <div className="container">
-      <h3>Employee Eligibility Information</h3>
-
+      <h3>Add New Employee</h3>
       <Grid container item spacing={3}>
         <Grid item xs={12}>
           <h4>Where will your remote hire live and work from?</h4>

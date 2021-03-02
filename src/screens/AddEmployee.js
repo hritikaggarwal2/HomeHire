@@ -46,7 +46,6 @@ function AddEmployee() {
 
   return (
     <div className="pageWithNav addEmp">
-      <h1>Add New Employee</h1>
       <Stepper activeStep={activeStep} className="stepper" 
       steps={ [{title: 'Employee Eligibility'}, {title: 'New Hire Profile'}, {title: 'New Hire Benefits'}, {title: 'Offer Letter'}] }>
       </Stepper>
