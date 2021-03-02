@@ -55,72 +55,88 @@ export default class Dashboard extends React.Component {
               </Col>
             </Row>
           </Card>
+          {/* This row contains payroll, onboading, notification cards */}
           <Row className="top20">
             <Col xs={12} sm={7}>
-              {/* Payroll quick view card*/}
-              <Card>
-                <Card.Body>
-                  <Card.Title>
-                    Payroll for March 2021
-                  </Card.Title>
-                  <Table hover size="sm">
-                    <thead>
-                      <tr>
-                        <th>Employees ({numTotal}) </th>
-                        <th>Salary</th>
-                        <th>Misc. Comp</th>
-                        <th>Gross</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Alice Oh</td>
-                        <td>10,000</td>
-                        <td>2,000</td>
-                        <td>12,000</td>
-                        <td>Sent</td>
-                      </tr>
-                      <tr>
-                        <td>Alice Oh</td>
-                        <td>10,000</td>
-                        <td>2,000</td>
-                        <td>12,000</td>
-                        <td>Sent</td>
-                      </tr>
-                      <tr>
-                        <td>Alice Oh</td>
-                        <td>10,000</td>
-                        <td>2,000</td>
-                        <td>12,000</td>
-                        <td>Sent</td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                </Card.Body>
-              </Card>
+              <PayrollCard numTotal={numTotal} />
             </Col>
             <Col>
-              {/* onboarding status card */}
-              <Card className="shaded-background">
-                <Card.Body>
-                  <Row>
-                    <Card.Title>Onboarding Status</Card.Title>
-                  </Row>
-                </Card.Body>
-              </Card>
-              {/* notifications card */}
-              <Card className="shaded-background top10">
-                <Card.Body>
-                  <Row>
-                    <Card.Title>Notifications</Card.Title>
-                  </Row>
-                </Card.Body>
-              </Card>
+              <OnboardingCard />
+              <NotificationsCard />
             </Col>
           </Row>
         </Container>
       </div>
     );
   }
+}
+
+function PayrollCard(props) {
+  return(
+    <Card>
+      <Card.Body>
+        <Card.Title>
+          Payroll for March 2021
+        </Card.Title>
+        <Table hover size="sm">
+          <thead>
+            <tr>
+              <th>Employees ({props.numTotal}) </th>
+              <th>Salary</th>
+              <th>Misc. Comp</th>
+              <th>Gross</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice Oh</td>
+              <td>10,000</td>
+              <td>2,000</td>
+              <td>12,000</td>
+              <td>Sent</td>
+            </tr>
+            <tr>
+              <td>Alice Oh</td>
+              <td>10,000</td>
+              <td>2,000</td>
+              <td>12,000</td>
+              <td>Sent</td>
+            </tr>
+            <tr>
+              <td>Alice Oh</td>
+              <td>10,000</td>
+              <td>2,000</td>
+              <td>12,000</td>
+              <td>Sent</td>
+            </tr>
+          </tbody>
+        </Table>
+      </Card.Body>
+    </Card>
+  );
+}
+
+function OnboardingCard(props) {
+  return(
+    <Card className="shaded-background">
+      <Card.Body>
+        <Row>
+          <Card.Title>Onboarding Status</Card.Title>
+        </Row>
+      </Card.Body>
+    </Card>
+  );
+}
+
+function NotificationsCard(props) {
+  return(
+    <Card className="shaded-background top10">
+      <Card.Body>
+        <Row>
+          <Card.Title>Notifications</Card.Title>
+        </Row>
+      </Card.Body>
+    </Card>
+  );
 }
