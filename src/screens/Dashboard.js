@@ -1,10 +1,11 @@
 import React from "react";
 
-import { 
+import {
   Card,
   Col,
   Container,
   Row,
+  Table
 } from 'react-bootstrap';
 
 export default class Dashboard extends React.Component {
@@ -35,18 +36,18 @@ export default class Dashboard extends React.Component {
           <h1>Dashboard</h1>
           {/* top card of the dashboard */}
           <Card className="shaded-background top10">
-            <Row> 
+            <Row>
               <Col xs={3}>
                 <h3>Teams</h3>
                 <p class="big-number">1</p>
               </Col>
               <Col xs={3}>
                 <h3>Total employees</h3>
-                <p class="big-number">5</p>
+                <p class="big-number">{numTotal}</p>
               </Col>
               <Col xs={3}>
                 <h3>Onboarding</h3>
-                <p class="big-number">2</p>
+                <p class="big-number">{numOnboarding}</p>
               </Col>
               <Col xs={3}>
                 <h3>Needs Attention</h3>
@@ -55,13 +56,47 @@ export default class Dashboard extends React.Component {
             </Row>
           </Card>
           <Row className="top20">
-            <Col xs={12} sm={6}>
+            <Col xs={12} sm={7}>
               {/* Payroll quick view card*/}
               <Card>
                 <Card.Body>
                   <Card.Title>
                     Payroll for March 2021
                   </Card.Title>
+                  <Table hover size="sm">
+                    <thead>
+                      <tr>
+                        <th>Employees ({numTotal}) </th>
+                        <th>Salary</th>
+                        <th>Misc. Comp</th>
+                        <th>Gross</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Alice Oh</td>
+                        <td>10,000</td>
+                        <td>2,000</td>
+                        <td>12,000</td>
+                        <td>Sent</td>
+                      </tr>
+                      <tr>
+                        <td>Alice Oh</td>
+                        <td>10,000</td>
+                        <td>2,000</td>
+                        <td>12,000</td>
+                        <td>Sent</td>
+                      </tr>
+                      <tr>
+                        <td>Alice Oh</td>
+                        <td>10,000</td>
+                        <td>2,000</td>
+                        <td>12,000</td>
+                        <td>Sent</td>
+                      </tr>
+                    </tbody>
+                  </Table>
                 </Card.Body>
               </Card>
             </Col>
