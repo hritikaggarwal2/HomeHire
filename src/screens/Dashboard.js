@@ -107,7 +107,7 @@ export default class Dashboard extends React.Component {
                 <Divider></Divider>
                 <div>
                   <p>
-                    To date, by using GoGlobal you have saved:
+                    To date, by using Minerva you have saved:
                     <ol>
                       <li>$12,000 in legal fees</li>
                       <li>34 hours of labor</li>
@@ -184,7 +184,7 @@ export default class Dashboard extends React.Component {
                   <List>
                     <ListItem>
                       <ListItemText
-                        primary="GoGlobal will be expanding to Ontario in Q3!"
+                        primary="Minerva will be expanding to Ontario in Q3!"
                         secondary="After successfully building out in British Columbia..."
                       />
                       <ListItemSecondaryAction>
@@ -195,7 +195,7 @@ export default class Dashboard extends React.Component {
                     <ListItem>
                       <ListItemText
                         primary="See some of our latest reviews and featured hires!"
-                        secondary="Through GoGlobal, Ryan Gosling was finally able to..."
+                        secondary="Through Minerva, Ryan Gosling was finally able to..."
                       />
                       <ListItemSecondaryAction>
                         <Button variant="contained">See More</Button>
