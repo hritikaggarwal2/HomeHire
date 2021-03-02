@@ -33,7 +33,7 @@ export default function NewHireStart() {
   const styleSheet = useStyles();
 
   return (
-    <div className="container">
+    <div className="newHireStartContainer">
       <h3>Add New Employee</h3>
       <Container>
         <Row>
