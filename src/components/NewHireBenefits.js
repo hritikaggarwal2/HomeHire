@@ -2,6 +2,23 @@ import React from "react";
 import {Container, Row, Col, Card, Button} from "react-bootstrap";
 
 export default function NewHireBenefits() {
+
+  const selected = (card) => {
+    var basic = document.getElementById("basic");
+    var standard = document.getElementById("standard");
+    if (card === "basic") {
+      basic.style.backgroundColor="#EFEFEF";
+      basic.style.borderColor="black"
+      standard.style.backgroundColor="#FFF";
+      standard.style.borderColor="rgba(0,0,0,.125)"
+    } else {
+      basic.style.backgroundColor="#FFF";
+      basic.style.borderColor="rgba(0,0,0,.125)"
+      standard.style.backgroundColor="#EFEFEF";
+      standard.style.borderColor="black"
+    }
+  }
+
   return (
     <div className="container benefits">
       <h3>Choose NewHire Benefits</h3>
@@ -15,7 +32,7 @@ export default function NewHireBenefits() {
       <br/>
       <Container>
         <Row>
-        <Card className="bencard" style={{ width: '100%' }}>
+        <Card id="basic" tag="a" className="bencard" style={{ width: '100%' }} onClick={() => selected("basic")} >
           <Row>
             <Col sm={3}>
             <div className="bencardhead">
@@ -50,7 +67,7 @@ export default function NewHireBenefits() {
         </Row>
         <br/>
         <Row>
-        <Card className="bencard" style={{ width: '100%' }}>
+        <Card id="standard" tag="a" className="bencard" style={{ width: '100%' }} onClick={() => selected("standard")} >
           <Row>
             <Col sm={3}>
             <div className="bencardhead">
@@ -86,7 +103,7 @@ export default function NewHireBenefits() {
         </Row>
         <br/>
         <Row>
-        <Card className="bencard" style={{ width: '100%' }}>
+        <Card className="bencard" style={{ width: '100%' }} >
           <Row>
             <Col sm={3}>
             <div className="bencardhead">
