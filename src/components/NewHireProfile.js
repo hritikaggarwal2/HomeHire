@@ -1,157 +1,116 @@
 import React from "react";
-import {
-  Typography,
-  Grid,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  makeStyles,
-} from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-  inputRoot: {
-    color: "#5D576B !important",
-    "& .Mui-focused": {
-      color: "#5D576B",
-    },
-    "& .MuiInputBase-root input": {
-      color: "#5D576B",
-    },
-  },
-  focused: {
-    color: "#5D576B !important",
-  },
-}));
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Form from "react-bootstrap/Form";
 
 export default function NewHireProfile() {
-  const styleSheet = useStyles();
 
   return (
-    <div className="container">
-      <h3>New Hire Profile</h3>
-      <p>
-        Enter basic information for your new employee to create an official
-        contract document and register them in the system. You can skip some
-        information if you do not know at this point. Your employee can fill it
-        in later.
-      </p>
-      <br />
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
-          <Typography>First Name</Typography>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            required
-            label="Employee's legal first name"
-            fullWidth
-            autoComplete="cc-name"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Typography>Last Name</Typography>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            required
-            label="Employee's legal last name"
-            fullWidth
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Typography>Email Address</Typography>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            required
-            label="Employee Email Address"
-            fullWidth
-            autoComplete="cc-name"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Typography>Phone Number</Typography>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            label="+1 (___) ___-____"
-            fullWidth
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <Typography>Mailing Address</Typography>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            fullWidth
-            label="Mailing Address"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <Typography>Job Title</Typography>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            fullWidth
-            label="Job Title"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Typography>Salary on Offer</Typography>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            required
-            label="Amount in USD"
-            fullWidth
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Typography>Signing Bonus</Typography>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            label="Amount in USD"
-            fullWidth
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <Typography>Start Date</Typography>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            fullWidth
-            label="mm/dd/yyyy"
-          />
-        </Grid>
-        <Grid item xs={6}>
-          {/*placeholder for spacing*/}
-        </Grid>
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={
-              <Checkbox
-                classes={{
-                  root: styleSheet.inputRoot,
-                }}
-                color="secondary"
-                name="saveCard"
-                value="yes"
-              />
-            }
-            label="Automatically generate offer letter"
-          />
-        </Grid>
-      </Grid>
+    <div className="newHireProfileContainer">
+      <Container>
+        <h3>New Hire Profile</h3>
+        <p>
+          Enter basic information for your new employee to create an official
+          contract document and register them in the system. You can skip some
+          information if you do not know at this point. Your employee can fill it
+          in later.
+        </p>
+        <Form>
+          <Form.Group as={Row}>
+            <Form.Label column sm="4">
+              <strong>Employee ID</strong>
+            </Form.Label>
+            <Col sm="8">
+              <Form.Control plaintext readOnly defaultValue="AR20210221-1" />
+            </Col>
+          </Form.Group>
+        </Form>
+        <br />
+
+        <Row>
+          <Col>
+            <Form.Group>
+              <Form.Label><strong>First Name *</strong></Form.Label>
+              <Form.Control type="name" placeholder="Employee's legal first name" />
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group>
+              <Form.Label><strong>Last Name *</strong></Form.Label>
+              <Form.Control type="name" placeholder="Employee's legal last name" />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <Form.Group>
+              <Form.Label><strong>Email Address *</strong></Form.Label>
+              <Form.Control type="name" placeholder="Employee's email address" />
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group>
+              <Form.Label><strong>Social Insurance Number (SIN)</strong></Form.Label>
+              <Form.Control type="name" placeholder="*** *** ***" />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <Form.Group>
+              <Form.Label><strong>Job Title *</strong></Form.Label>
+              <Form.Control placeholder="Job title" />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <Form.Group>
+              <Form.Label><strong>Salary on Offer *</strong></Form.Label>
+              <Form.Control placeholder="Amount in USD" />
+            </Form.Group>
+          </Col>
+
+          <div class="whiteText">
+            <Col>
+            <Form.Label>bye</Form.Label>
+            <Form.Control type="text" placeholder="[auto-calculated] CAD" readOnly />
+            </Col>
+          </div>
+        </Row>
+
+        <Row>
+          <Col>
+            <Form.Group>
+              <Form.Label><strong>Sign-on Bonus </strong></Form.Label>
+              <Form.Control placeholder="Amount in USD" />
+            </Form.Group>
+          </Col>
+
+        <div class="whiteText">
+          <Col>
+          <Form.Label>should not see this</Form.Label>
+          <Form.Control type="text" placeholder="[auto-calculated] CAD" readOnly />
+          </Col>
+        </div>
+          
+        </Row>
+
+      
+        <Row>
+          <Col>
+            <Form.Group>
+              <Form.Label><strong>Start Date *</strong></Form.Label>
+              <Form.Control placeholder="mm/dd/yyyy" />
+            </Form.Group>
+          </Col>
+        </Row>
+
+      </Container>
     </div>
   );
 }
