@@ -7,7 +7,7 @@ export default function NavBar(props) {
     <div className="nav">
       <ul>
         <li>
-          <h3>GoGlobal</h3>
+          <h3>Minerva</h3>
         </li>
         <li className={props.index === 0 ? "primary-dark" : ""}>
           <Link to="./">Dashboard</Link>
