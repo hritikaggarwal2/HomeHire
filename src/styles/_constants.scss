@@ -4,8 +4,8 @@ $primary-light: #bbb6c7;
 $primary: #5d576b;
 $primary-dark: #312a42;
 $light: #fffae3;
-$gray-light: #EFEFEF;
-$gray: #AAA;
+$gray-light: #efefef;
+$gray: #aaa;
 
 $save: #ec5766;
 
@@ -13,7 +13,7 @@ $save: #ec5766;
 $nav-size: 20vw;
 
 :export {
-    primary-light: #{$primary-light};
-    primary: #{$primary};
-    primary-dark: #{$primary-dark};
+  primary-light: #{$primary-light};
+  primary: #{$primary};
+  primary-dark: #{$primary-dark};
 }
