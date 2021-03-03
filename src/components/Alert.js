@@ -1,5 +1,3 @@
-// import "../styles/common.css";
-
 function Alert(props) {
   return (
     <div className="Alert">

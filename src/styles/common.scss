@@ -1,4 +1,6 @@
 @import "./constants";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap");
+@import "~bootstrap/scss/bootstrap";
 
 * {
   transition: all 0.15s ease;
@@ -7,6 +9,7 @@
 body,
 html {
   margin: 0;
+  font-family: "Inter", sans-serif !important;
 }
 
 h1,
@@ -110,8 +113,9 @@ ul {
 }
 
 .dashboard {
-
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     color: $primary;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -127,7 +131,7 @@ ul {
 
   h3 {
     font-size: 20px;
-    text-align: center
+    text-align: center;
   }
 
   .big-number {
@@ -157,7 +161,6 @@ ul {
   .list-group-item {
     background-color: $primary-light;
   }
-
 }
 
 .emps {
@@ -231,7 +234,6 @@ ul {
     text-align: center;
   }
 
-
   .MuiStepIcon-root.MuiStepIcon-completed,
   .MuiStepIcon-root.MuiStepIcon-active {
     color: $primary;
@@ -267,7 +269,7 @@ ul {
   }
 
   button a:hover {
-    color: $white
+    color: $white;
   }
 
   button.nxt:hover {
@@ -284,11 +286,9 @@ ul {
   button.bck:hover {
     background: $gray;
   }
-  
 
   .benefits {
     .bencard {
-
       .bencardhead {
         padding-left: 20px;
         margin: 0;
@@ -365,7 +365,6 @@ ul {
       .bencardcustom:hover {
         background-color: $primary-light;
       }
-
     }
   }
 
@@ -462,67 +461,25 @@ ul {
   align-items: center;
   flex-direction: column;
 
-  button,
-  input[type="submit"] {
-    background: none;
-    border: none;
-    outline: none;
-    padding: 13px 45px;
-    background: transparent;
-    border: 2px solid $primary;
-    border-radius: 50px;
-    color: $primary;
-    font-size: 18px;
-    margin: 15px;
-    cursor: pointer;
-    font-weight: 500;
-    width: 90%;
-    transition: all 0.5s ease;
-  }
-
-  button:hover,
-  input[type="submit"]:hover {
-    background: $primary;
-    color: white;
-  }
-}
-
-.empty-btn {
-  color: $primary !important;
-  border: 0px !important;
-  position: relative;
-  top: 0px;
-
-  &:hover {
-    background-color: transparent !important;
-    color: $primary-dark !important;
-    top: 5px;
-  }
-}
-
-.formContainer {
-  width: 30vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 20px auto;
-
-  .MuiFormControl-root {
-    width: 90%;
+  .formContainer {
+    width: 30vw;
     display: flex;
     justify-content: center;
-    margin: 10px 0;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto;
+  }
 
-    .MuiTextField-root {
-      width: 100%;
-    }
+  input {
+    margin: 0.2rem 0 1.5rem 0;
+    height: calc(2.5rem + 0.75rem + 2px) !important;
+  }
+
+  button,
+  input[type="submit"] {
+    padding: 0.7rem 0;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
   }
 }
-
-.link-forgot {
-  cursor: pointer;
-  color: #1098f7;
-}
-
-@import "~bootstrap/scss/bootstrap";
