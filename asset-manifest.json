@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/HomeHire/static/css/main.a185d2c5.chunk.css",
-    "main.js": "/HomeHire/static/js/main.19acc892.chunk.js",
-    "main.js.map": "/HomeHire/static/js/main.19acc892.chunk.js.map",
-    "runtime-main.js": "/HomeHire/static/js/runtime-main.fb4e8b2b.js",
-    "runtime-main.js.map": "/HomeHire/static/js/runtime-main.fb4e8b2b.js.map",
-    "static/js/2.1cbefbf9.chunk.js": "/HomeHire/static/js/2.1cbefbf9.chunk.js",
-    "static/js/2.1cbefbf9.chunk.js.map": "/HomeHire/static/js/2.1cbefbf9.chunk.js.map",
-    "static/js/3.159f2ae6.chunk.js": "/HomeHire/static/js/3.159f2ae6.chunk.js",
-    "static/js/3.159f2ae6.chunk.js.map": "/HomeHire/static/js/3.159f2ae6.chunk.js.map",
+    "main.css": "/HomeHire/static/css/main.6939cb6a.chunk.css",
+    "main.js": "/HomeHire/static/js/main.a4b2f833.chunk.js",
+    "main.js.map": "/HomeHire/static/js/main.a4b2f833.chunk.js.map",
+    "runtime-main.js": "/HomeHire/static/js/runtime-main.93a6b09b.js",
+    "runtime-main.js.map": "/HomeHire/static/js/runtime-main.93a6b09b.js.map",
+    "static/css/2.150d169a.chunk.css": "/HomeHire/static/css/2.150d169a.chunk.css",
+    "static/js/2.2c515cc0.chunk.js": "/HomeHire/static/js/2.2c515cc0.chunk.js",
+    "static/js/2.2c515cc0.chunk.js.map": "/HomeHire/static/js/2.2c515cc0.chunk.js.map",
+    "static/js/3.0b383bd7.chunk.js": "/HomeHire/static/js/3.0b383bd7.chunk.js",
+    "static/js/3.0b383bd7.chunk.js.map": "/HomeHire/static/js/3.0b383bd7.chunk.js.map",
     "index.html": "/HomeHire/index.html",
-    "static/css/main.a185d2c5.chunk.css.map": "/HomeHire/static/css/main.a185d2c5.chunk.css.map",
-    "static/js/2.1cbefbf9.chunk.js.LICENSE.txt": "/HomeHire/static/js/2.1cbefbf9.chunk.js.LICENSE.txt",
+    "static/css/2.150d169a.chunk.css.map": "/HomeHire/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.6939cb6a.chunk.css.map": "/HomeHire/static/css/main.6939cb6a.chunk.css.map",
+    "static/js/2.2c515cc0.chunk.js.LICENSE.txt": "/HomeHire/static/js/2.2c515cc0.chunk.js.LICENSE.txt",
     "static/media/user.4e1103b4.jpg": "/HomeHire/static/media/user.4e1103b4.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb4e8b2b.js",
-    "static/js/2.1cbefbf9.chunk.js",
-    "static/css/main.a185d2c5.chunk.css",
-    "static/js/main.19acc892.chunk.js"
+    "static/js/runtime-main.93a6b09b.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.2c515cc0.chunk.js",
+    "static/css/main.6939cb6a.chunk.css",
+    "static/js/main.a4b2f833.chunk.js"
   ]
 }
