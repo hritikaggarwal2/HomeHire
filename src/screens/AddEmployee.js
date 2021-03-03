@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 
 import { Link } from "react-router-dom";
 
+import colors from "../styles/_constants.scss";
+
 // screens
 import NewHireStart from "../components/NewHireStart";
 import NewHireProfile from "../components/NewHireProfile";
@@ -11,15 +13,9 @@ import NewHireBenefits from "../components/NewHireBenefits";
 import NewHireConfirmation from "../components/NewHireConfirmation";
 
 function AddEmployee() {
-  const steps = [
-    "Employee Eligibility",
-    "New Hire Profile",
-    "New Hire Benefits",
-    "Offer Letter",
-  ];
-  const [activeStep, setActiveStep] = useState(0);
+  const steps = [{title: 'Employee Eligibility'}, {title: 'New Hire Profile'}, {title: 'New Hire Benefits'}, {title: 'Offer Letter'}];
 
-  const [data, setData] = useState({});
+  const [activeStep, setActiveStep] = useState(0);
 
   function getStepContent(step) {
     switch (step) {
@@ -46,51 +42,39 @@ function AddEmployee() {
 
   return (
     <div className="pageWithNav addEmp">
-      <Stepper activeStep={activeStep} className="stepper" 
-      steps={ [{title: 'Employee Eligibility'}, {title: 'New Hire Profile'}, {title: 'New Hire Benefits'}, {title: 'Offer Letter'}] }>
-      </Stepper>
+      <Stepper activeStep={activeStep} steps={steps} activeColor={colors.primary} completeColor={colors.primary}/>
 
       {getStepContent(activeStep)}
 
       {activeStep === steps.length - 1 ? (
         <>
           <div className="allButtons">
-            <Button onClick={handleBack} className="button">
+            <Button onClick={handleBack} className="button bck">
               Back
             </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              component={Link}
-              to={{
-                pathname: "/",
-                state: {
-                  addEmployee: true,
-                },
-              }}
-              className="button nxt"
-            >
-              Send For Review
+            <Button className="button nxt">
+              <Link to="./">Send For Review</Link>
             </Button>
           </div>
         </>
       ) : (
         <>
-          <div className="allButtons">
-            {activeStep !== 0 && (
-              <Button onClick={handleBack} className="button">
-                Back
-              </Button>
-            )}
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleNext}
-              className="button nxt"
-            >
+          {activeStep !== 0 ? (
+            <div className="allButtons">
+            <Button onClick={handleBack} className="button bck">
+              Back
+            </Button>
+            <Button onClick={handleNext} className="button nxt">
               Next
             </Button>
-          </div>
+            </div>
+          ) : (
+            <div className="allButtons">
+            <Button onClick={handleNext} className="button nxt">
+              Check Eligibility
+            </Button>
+            </div>
+          )}
         </>
       )}
     </div>
