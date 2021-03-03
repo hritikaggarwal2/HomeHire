@@ -16,6 +16,8 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 ul {
   margin: 0;
 }
@@ -74,15 +76,18 @@ ul {
 }
 
 // NAV BAR
-.nav {
+.nav-custom {
   background: $primary;
   width: $nav-size;
   height: 100vh;
   position: fixed;
 
+  ul {
+  }
+
   h3 {
+    font-weight: 500;
     color: $light;
-    font-size: 30px;
     padding: 5vw;
     text-align: center;
   }
@@ -94,20 +99,23 @@ ul {
     display: block;
     margin: 30px 10px;
     padding: 10px 15px;
-    border-left: 7px solid transparent;
   }
 
   a:hover {
-    border-left: 7px solid #fff;
+    color: white;
     padding: 10px 25px;
+    text-decoration: none;
   }
 
-  .primary-dark a:hover {
-    border-left: 7px solid transparent;
-    padding: 10px 15px;
+  .item-selected {
+    text-decoration: underline;
+
+    a:hover {
+      padding: 10px 15px;
+    }
   }
 
-  li:not(:first-child) {
+  li {
     margin-left: 2.5vw;
   }
 }

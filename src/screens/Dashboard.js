@@ -8,7 +8,7 @@ import {
   ListGroup,
   Row,
   Table,
-} from 'react-bootstrap';
+} from "react-bootstrap";
 
 export default class Dashboard extends React.Component {
   state = {
@@ -17,7 +17,7 @@ export default class Dashboard extends React.Component {
 
   componentDidMount() {
     let addEmployee = false;
-    if (this.props.location.state) {
+    if (this.props?.location?.state) {
       addEmployee = this.props.location.state.addEmployee;
     }
     if (addEmployee) {
@@ -74,12 +74,10 @@ export default class Dashboard extends React.Component {
 }
 
 function PayrollCard(props) {
-  return(
+  return (
     <Card className="full-height">
       <Card.Body>
-        <Card.Title>
-          Payroll for March 2021
-        </Card.Title>
+        <Card.Title>Payroll for March 2021</Card.Title>
         <Table hover size="sm">
           <thead>
             <tr>
@@ -120,7 +118,7 @@ function PayrollCard(props) {
 }
 
 function OnboardingCard(props) {
-  return(
+  return (
     <Card className="shaded-background">
       <Card.Body>
         <Row>
@@ -137,17 +135,29 @@ function OnboardingCard(props) {
               <tr>
                 <td>Jamie Cho</td>
                 <td>Reviewing offer</td>
-                <td><Button variant="outline-dark" size="sm">View</Button></td>
+                <td>
+                  <Button variant="outline-dark" size="sm">
+                    View
+                  </Button>
+                </td>
               </tr>
               <tr>
                 <td>Jamie Cho</td>
                 <td>Reviewing offer</td>
-                <td><Button variant="outline-dark" size="sm">View</Button></td>
+                <td>
+                  <Button variant="outline-dark" size="sm">
+                    View
+                  </Button>
+                </td>
               </tr>
               <tr>
                 <td>Jamie Cho</td>
                 <td>Reviewing offer</td>
-                <td><Button variant="outline-dark" size="sm">View</Button></td>
+                <td>
+                  <Button variant="outline-dark" size="sm">
+                    View
+                  </Button>
+                </td>
               </tr>
             </tbody>
           </Table>
@@ -158,18 +168,18 @@ function OnboardingCard(props) {
 }
 
 function NotificationsCard(props) {
-  return(
+  return (
     <Card className="shaded-background top10">
       <Card.Body>
-          <Card.Title>Notifications</Card.Title>
-          <ListGroup variant="flush" >
-            <ListGroup.Item action >
-              Minerva is expanding to Ontario in ...
-            </ListGroup.Item>
-            <ListGroup.Item action >
-              See some of our latest featured hires ...
-            </ListGroup.Item>
-          </ListGroup>
+        <Card.Title>Notifications</Card.Title>
+        <ListGroup variant="flush">
+          <ListGroup.Item action>
+            Minerva is expanding to Ontario in ...
+          </ListGroup.Item>
+          <ListGroup.Item action>
+            See some of our latest featured hires ...
+          </ListGroup.Item>
+        </ListGroup>
       </Card.Body>
     </Card>
   );

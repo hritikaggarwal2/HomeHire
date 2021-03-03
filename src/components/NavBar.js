@@ -1,25 +1,24 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/common.scss";
 
 export default function NavBar(props) {
   return (
-    <div className="nav">
+    <div className="nav-custom">
+      <h3>Minerva</h3>
       <ul>
-        <li>
-          <h3>Minerva</h3>
-        </li>
-        <li className={props.index === 0 ? "primary-dark" : ""}>
+        <li className={props.index === 0 ? "item-selected" : ""}>
           <Link to="./">Dashboard</Link>
         </li>
-        <li className={props.index === 1 ? "primary-dark" : ""}>
-          <Link to="./employees">Employees</Link>
-        </li>
-        <li className={props.index === 2 ? "primary-dark" : ""}>
+        <li className={props.index === 1 ? "item-selected" : ""}>
           <Link to="./payroll">Payroll</Link>
         </li>
-        <li className={props.index === 3 ? "primary-dark" : ""}>
-          <Link to="./documents">Documents</Link>
+        <li className={props.index === 2 ? "item-selected" : ""}>
+          <Link to="./employees">Employees</Link>
+        </li>
+        <li className={props.index === 3 ? "item-selected" : ""}>
+          <Link to="./documents">Legal Documents</Link>
+        </li>
+        <li className={props.index === 4 ? "item-selected" : ""}>
+          <Link to="./documents">Settings</Link>
         </li>
       </ul>
     </div>
