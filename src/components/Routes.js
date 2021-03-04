@@ -13,6 +13,8 @@ import EmployeeDetail from "../screens/EmployeeDetail";
 import SignUp from "../screens/SignUp";
 import Login from "../screens/Login";
 import Loading from "../screens/Loading";
+import ViewOffer from "../screens/ViewOffer";
+import GenerateOffer from "../screens/GenerateOffer";
 
 // components
 import PageWithNav from "../components/PageWithNav";
@@ -48,6 +50,12 @@ function Routes() {
             </Route>
             <Route path="/addemployee">
               <AddEmployee />
+            </Route>
+            <Route path="/offer">
+              <GenerateOffer />
+            </Route>
+            <Route path="/myoffer">
+              <ViewOffer />
             </Route>
             <Route path="*">
               <PageWithNav index={0}>
