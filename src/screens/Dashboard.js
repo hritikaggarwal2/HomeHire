@@ -33,6 +33,18 @@ export default class Dashboard extends React.Component {
     let numHired = 2;
     let numTotal = numOnboarding + numHired;
     return (
+      // toggle the props passed to DashboardContent to control which type of dashboard is generated
+      <DashboardContent employerView={false} numTotal={numTotal} numOnboarding={numOnboarding} />
+    );
+  }
+}
+
+// give this function employerView=true to generate employer dashboard,
+// false to generate employee dashboard
+// this condition can later be changed to user id instead or whatever else is needed
+function DashboardContent(props) {
+  if (props.employerView) {
+    return (
       <div class="pageWithNav dashboard">
         <Container>
           <h1>Dashboard</h1>
@@ -45,11 +57,11 @@ export default class Dashboard extends React.Component {
               </Col>
               <Col xs={3}>
                 <h3>Total employees</h3>
-                <p class="big-number">{numTotal}</p>
+                <p class="big-number">{props.numTotal}</p>
               </Col>
               <Col xs={3}>
                 <h3>Onboarding</h3>
-                <p class="big-number">{numOnboarding}</p>
+                <p class="big-number">{props.numOnboarding}</p>
               </Col>
               <Col xs={3}>
                 <h3>Needs Attention</h3>
@@ -60,7 +72,7 @@ export default class Dashboard extends React.Component {
           {/* This row contains payroll, onboading, notification cards */}
           <Row className="top20">
             <Col xs={12} sm={7}>
-              <PayrollCard numTotal={numTotal} />
+              <PayrollCard numTotal={props.numTotal} />
             </Col>
             <Col>
               <OnboardingCard />
@@ -70,8 +82,69 @@ export default class Dashboard extends React.Component {
         </Container>
       </div>
     );
+  } else {
+    return (
+      <div class="pageWithNav dashboard">
+        <Container>
+          <h1>Dashboard</h1>
+          {/* top card of the dashboard */}
+          <Card className="shaded-background top10">
+            <Card.Body>
+              <Card.Title className="no-margin">
+                  Hi Ryan! Welcome to Minerva.
+              </Card.Title>
+            </Card.Body>
+          </Card>
+          {/* This row contains payroll, onboading, notification cards */}
+          <Row className="top20">
+            <Col xs={12} sm={6} >
+              <Card className="shaded-background">
+                <Card.Body>
+                  <Card.Title>Things to do</Card.Title>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item action>
+                      Review and sign offer letter by the 22nd
+                    </ListGroup.Item>
+                    <ListGroup.Item action>
+                      Fill out remaining profile information
+                    </ListGroup.Item>
+                    <ListGroup.Item disabled>
+                      View onboarding documents (sign offer first)
+                    </ListGroup.Item>
+                  </ListGroup>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              Calendar
+            </Col>
+          </Row>
+          <Row className="top20">
+            <Col xs={12} sm={6}>
+              <Card className="shaded-background full-height">
+                <Card.Body>
+                  <Card.Title>What's new</Card.Title>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item>
+                      3 new documents are available to view
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      Welcome to Minerva!
+                    </ListGroup.Item>
+                  </ListGroup>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <NotificationsCard />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
   }
 }
+
 
 function PayrollCard(props) {
   return (
