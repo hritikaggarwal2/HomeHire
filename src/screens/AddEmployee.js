@@ -41,7 +41,7 @@ function AddEmployee() {
   };
 
   return (
-    <div className="pageWithNav addEmp">
+    <div className="addEmp">
       <Stepper activeStep={activeStep} steps={steps} activeColor={colors.primary} completeColor={colors.primary}/>
 
       {getStepContent(activeStep)}

@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // user provider
@@ -14,10 +13,11 @@ import EmployeeDetail from "../screens/EmployeeDetail";
 import SignUp from "../screens/SignUp";
 import Login from "../screens/Login";
 import Loading from "../screens/Loading";
+import ViewOffer from "../screens/ViewOffer";
+import GenerateOffer from "../screens/GenerateOffer";
 
 // components
-import NavBar from "./NavBar";
-import HeaderBar from "./HeaderBar";
+import PageWithNav from "../components/PageWithNav";
 
 function Routes() {
   const user = useUser().user;
@@ -29,17 +29,21 @@ function Routes() {
         <Loading />
       ) : user ? (
         <Router>
-          <NavBar />
-          <HeaderBar />
           <Switch>
             <Route path="/employees">
-              <Employees />
+              <PageWithNav index={2}>
+                <Employees />
+              </PageWithNav>
             </Route>
             <Route path="/payroll">
-              <Payroll />
+              <PageWithNav index={1}>
+                <Payroll />
+              </PageWithNav>
             </Route>
             <Route path="/documents">
-              <Documents />
+              <PageWithNav index={3}>
+                <Payroll />
+              </PageWithNav>
             </Route>
             <Route path="/profile">
               <EmployeeDetail />
@@ -47,7 +51,17 @@ function Routes() {
             <Route path="/addemployee">
               <AddEmployee />
             </Route>
-            <Route path="*" component={Dashboard} />
+            <Route path="/offer">
+              <GenerateOffer />
+            </Route>
+            <Route path="/myoffer">
+              <ViewOffer />
+            </Route>
+            <Route path="*">
+              <PageWithNav index={0}>
+                <Dashboard />
+              </PageWithNav>
+            </Route>
           </Switch>
         </Router>
       ) : (

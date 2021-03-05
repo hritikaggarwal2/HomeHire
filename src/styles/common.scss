@@ -1,4 +1,6 @@
 @import "./constants";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap");
+@import "~bootstrap/scss/bootstrap";
 
 * {
   transition: all 0.15s ease;
@@ -7,12 +9,15 @@
 body,
 html {
   margin: 0;
+  font-family: "Inter", sans-serif !important;
 }
 
 h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 ul {
   margin: 0;
 }
@@ -71,15 +76,18 @@ ul {
 }
 
 // NAV BAR
-.nav {
+.nav-custom {
   background: $primary;
   width: $nav-size;
   height: 100vh;
   position: fixed;
 
+  ul {
+  }
+
   h3 {
+    font-weight: 500;
     color: $light;
-    font-size: 30px;
     padding: 5vw;
     text-align: center;
   }
@@ -91,27 +99,31 @@ ul {
     display: block;
     margin: 30px 10px;
     padding: 10px 15px;
-    border-left: 7px solid transparent;
   }
 
   a:hover {
-    border-left: 7px solid #fff;
+    color: white;
     padding: 10px 25px;
+    text-decoration: none;
   }
 
-  .primary-dark a:hover {
-    border-left: 7px solid transparent;
-    padding: 10px 15px;
+  .item-selected {
+    text-decoration: underline;
+
+    a:hover {
+      padding: 10px 15px;
+    }
   }
 
-  li:not(:first-child) {
+  li {
     margin-left: 2.5vw;
   }
 }
 
 .dashboard {
-
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     color: $primary;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -127,7 +139,7 @@ ul {
 
   h3 {
     font-size: 20px;
-    text-align: center
+    text-align: center;
   }
 
   .big-number {
@@ -157,7 +169,6 @@ ul {
   .list-group-item {
     background-color: $primary-light;
   }
-
 }
 
 .emps {
@@ -231,7 +242,6 @@ ul {
     text-align: center;
   }
 
-
   .MuiStepIcon-root.MuiStepIcon-completed,
   .MuiStepIcon-root.MuiStepIcon-active {
     color: $primary;
@@ -267,7 +277,7 @@ ul {
   }
 
   button a:hover {
-    color: $white
+    color: $white;
   }
 
   button.nxt:hover {
@@ -284,11 +294,9 @@ ul {
   button.bck:hover {
     background: $gray;
   }
-  
 
   .benefits {
     .bencard {
-
       .bencardhead {
         padding-left: 20px;
         margin: 0;
@@ -362,6 +370,9 @@ ul {
         }
       }
 
+      .bencardcustom:hover {
+        background-color: $primary-light;
+      }
     }
   }
 
@@ -481,6 +492,22 @@ ul {
   }
 }
 
+.offer-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  iframe {
+    margin: 40px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+}
+
 .SignUp,
 .Login {
   height: 100vh;
@@ -489,67 +516,36 @@ ul {
   align-items: center;
   flex-direction: column;
 
+  .formContainer {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto;
+  }
+
+  input {
+    margin: 0.2rem 0 1.5rem 0;
+    height: calc(2.5rem + 0.75rem + 2px) !important;
+  }
+
   button,
   input[type="submit"] {
-    background: none;
-    border: none;
-    outline: none;
-    padding: 13px 45px;
-    background: transparent;
-    border: 2px solid $primary;
-    border-radius: 50px;
-    color: $primary;
+    padding: 0.7rem 0;
     font-size: 18px;
-    margin: 15px;
     cursor: pointer;
-    font-weight: 500;
-    width: 90%;
-    transition: all 0.5s ease;
-  }
-
-  button:hover,
-  input[type="submit"]:hover {
-    background: $primary;
-    color: white;
+    width: 100%;
   }
 }
 
-.empty-btn {
-  color: $primary !important;
-  border: 0px !important;
-  position: relative;
-  top: 0px;
-
-  &:hover {
-    background-color: transparent !important;
-    color: $primary-dark !important;
-    top: 5px;
-  }
-}
-
-.formContainer {
-  width: 30vw;
+.button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin: 20px auto;
 
-  .MuiFormControl-root {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-
-    .MuiTextField-root {
-      width: 100%;
-    }
+  button {
+    margin: 0.4rem;
+    padding: 0.65rem 2rem;
   }
 }
-
-.link-forgot {
-  cursor: pointer;
-  color: #1098f7;
-}
-
-@import "~bootstrap/scss/bootstrap";
