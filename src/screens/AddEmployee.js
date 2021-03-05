@@ -42,7 +42,7 @@ function AddEmployee() {
 
   return (
     <div className="addEmp">
-      <Stepper activeStep={activeStep} steps={steps} activeColor={colors.primary} completeColor={colors.primary}/>
+      <Stepper activeStep={activeStep} steps={steps} activeColor="#5d576b" completeColor="#bbb6c7"/>
 
       {getStepContent(activeStep)}
 
