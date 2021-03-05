@@ -53,7 +53,7 @@ function AddEmployee() {
               Back
             </Button>
             <Button className="button nxt">
-              <Link to="./">Send For Review</Link>
+              <Link to="./">Accept</Link>
             </Button>
           </div>
         </>

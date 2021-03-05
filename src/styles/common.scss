@@ -317,17 +317,10 @@ ul {
         }
       }
 
-      .bencardcustom:hover {
-        background-color: $primary-light;
-      }
-
     }
   }
 
   .review {
-    .MuiCard-root {
-      padding: 20px;
-    }
 
     .button {
       width: 250px;
@@ -335,11 +328,11 @@ ul {
       border: 2px solid #ccc;
     }
 
-    .MuiButton-containedPrimary {
-      width: 150px;
-      background: $primary;
-      color: #fff;
+    .docreview {
+      background-color: $gray-light;
+      border-radius: 15px;
     }
+
   }
 
   .MuiButton-containedPrimary:hover {
