@@ -60,6 +60,10 @@ ul {
   padding: 10px 0;
 }
 
+.no-margin {
+  margin: 0 !important;
+}
+
 // LOADING
 .loading {
   display: flex;
@@ -166,8 +170,13 @@ ul {
     height: 100%;
   }
 
-  .list-group-item {
+  .list-group-item, .list-group-item.disabled {
     background-color: $primary-light;
+  }
+
+  .react-calendar {
+    width: 100%;
+    border: none;
   }
 }
 
