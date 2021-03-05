@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Button,
@@ -9,6 +9,9 @@ import {
   Row,
   Table,
 } from "react-bootstrap";
+
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 export default class Dashboard extends React.Component {
   state = {
@@ -43,6 +46,7 @@ export default class Dashboard extends React.Component {
 // false to generate employee dashboard
 // this condition can later be changed to user id instead or whatever else is needed
 function DashboardContent(props) {
+  const [defaultDate] = useState(new Date(2021, 2, 22));
   if (props.employerView) {
     return (
       <div class="pageWithNav dashboard">
@@ -98,7 +102,7 @@ function DashboardContent(props) {
           {/* This row contains payroll, onboading, notification cards */}
           <Row className="top20">
             <Col xs={12} sm={6} >
-              <Card className="shaded-background">
+              <Card className="shaded-background full-height">
                 <Card.Body>
                   <Card.Title>Things to do</Card.Title>
                   <ListGroup variant="flush">
@@ -116,7 +120,7 @@ function DashboardContent(props) {
               </Card>
             </Col>
             <Col>
-              Calendar
+              <Calendar defaultValue={defaultDate}/>
             </Col>
           </Row>
           <Row className="top20">

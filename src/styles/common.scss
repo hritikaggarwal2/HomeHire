@@ -173,6 +173,11 @@ ul {
   .list-group-item, .list-group-item.disabled {
     background-color: $primary-light;
   }
+
+  .react-calendar {
+    width: 100%;
+    border: none;
+  }
 }
 
 .emps {
