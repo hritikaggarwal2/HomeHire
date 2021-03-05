@@ -377,9 +377,6 @@ ul {
   }
 
   .review {
-    .MuiCard-root {
-      padding: 20px;
-    }
 
     .button {
       width: 250px;
@@ -387,11 +384,45 @@ ul {
       border: 2px solid #ccc;
     }
 
-    .MuiButton-containedPrimary {
-      width: 150px;
-      background: $primary;
-      color: #fff;
+    .docreview {
+      background-color: $gray-light;
+      border-radius: 15px;
     }
+
+    h4 {
+      margin: 0;
+      padding: 10px;
+    }
+
+    .doccard {
+      margin-bottom: 20px;
+
+      img {
+        height: 250px;
+        margin: 10px;
+        margin-bottom: 0;
+      }
+
+      h5 {
+        padding-left: 10px;
+        font-size: 15px;
+        color: $primary-dark;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        text-decoration: underline;
+        color: black;
+        padding-bottom: 10px;
+      }
+
+      a:hover {
+        color: $gray;
+        text-decoration: underline;
+      }
+    }
+
   }
 
   .MuiButton-containedPrimary:hover {
