@@ -1,6 +1,8 @@
 import React from "react";
 import {Container, Row, Col, Card, Image} from "react-bootstrap";
 
+import offer from "../data/offerletter.jpg"
+
 export default function NewHireConfirmation() {
   return (
     <div className="container review">
@@ -18,14 +20,38 @@ export default function NewHireConfirmation() {
             <Row className="justify-content-md-center">
               <Col sm={5}>
                 <Card className="doccard">
-                  <Card.Img variant="top" />
-                  <p>hi</p>
+                  <Image src={offer} thumbnail fluid/>
+                  <h4>Document 1: New Hire Offer</h4>
+                  <h5>Created: 02/21/2021</h5>
+                  <Row>
+                  <Col sm={4}>
+                    <a>View</a>
+                  </Col>
+                  <Col sm={4}>
+                    <a>Download</a>
+                  </Col>
+                  <Col sm={4}>
+                    <a>Modify</a>
+                  </Col>
+                  </Row>
                 </Card>
               </Col>
               <Col sm={5}>
                 <Card className="doccard">
-                  <Image src="../data/offerletter.jpg"/>
-                  <p>hi</p>
+                  <Image src={offer} thumbnail fluid/>
+                  <h4>Document 2: Minerva Leasing Contract</h4>
+                  <h5>Created: 02/21/2021</h5>
+                  <Row>
+                  <Col sm={4}>
+                    <a>View</a>
+                  </Col>
+                  <Col sm={4}>
+                    <a>Download</a>
+                  </Col>
+                  <Col sm={4}>
+                    <a>Modify</a>
+                  </Col>
+                  </Row>
                 </Card>
               </Col>
             </Row>

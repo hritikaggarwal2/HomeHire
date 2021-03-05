@@ -378,6 +378,40 @@ ul {
       border-radius: 15px;
     }
 
+    h4 {
+      margin: 0;
+      padding: 10px;
+    }
+
+    .doccard {
+      margin-bottom: 20px;
+
+      img {
+        height: 250px;
+        margin: 10px;
+        margin-bottom: 0;
+      }
+
+      h5 {
+        padding-left: 10px;
+        font-size: 15px;
+        color: $primary-dark;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        text-decoration: underline;
+        color: black;
+        padding-bottom: 10px;
+      }
+
+      a:hover {
+        color: $gray;
+        text-decoration: underline;
+      }
+    }
+
   }
 
   .MuiButton-containedPrimary:hover {
