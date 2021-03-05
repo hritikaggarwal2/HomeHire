@@ -1,4 +1,9 @@
 import React from "react";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Form from "react-bootstrap/Form";
+
 import {
   InputLabel,
   MenuItem,
@@ -28,76 +33,66 @@ export default function NewHireStart() {
   const styleSheet = useStyles();
 
   return (
-    <div className="container">
+    <div className="newHireStartContainer">
       <h3>Add New Employee</h3>
-      <Grid container item spacing={3}>
-        <Grid item xs={12}>
-          <h4>Where will your remote hire live and work from?</h4>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <FormControl fullWidth required>
-            <InputLabel
-              classes={{
-                focused: styleSheet.focused,
-              }}
-              id="country-label"
-            >
-              Country
-            </InputLabel>
-            <Select id="country" defaultValue="">
-              <MenuItem value={"USA"}>United States</MenuItem>
-              <MenuItem value={"CA"}>Canada</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            required
-            id="zipcode"
-            name="zipcode"
-            label="Postal code"
-            fullWidth
-            autoComplete="shipping postal-code"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <h4>What is your remote hire's residency status?</h4>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <h4>Input employee SIN</h4>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <FormControl fullWidth required>
-            <InputLabel
-              classes={{
-                focused: styleSheet.focused,
-              }}
-              id="residency-label"
-            >
-              Resident Status
-            </InputLabel>
-            <Select id="residency" defaultValue="">
-              <MenuItem value={"USA"}>Citizen</MenuItem>
-              <MenuItem value={"CA"}>Visa</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            classes={{
-              root: styleSheet.inputRoot,
-            }}
-            required
-            id="cardName"
-            label="Employee SIN"
-            fullWidth
-            autoComplete="cc-name"
-          />
-        </Grid>
-      </Grid>
+      <Container>
+        <Row>
+          <Col><h4>Where will your remote hire live and work from?</h4></Col>
+          <Col></Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <Form.Group>
+            <Form.Label>Country</Form.Label>
+            <Form.Control as="select">
+              <option default>Select a country</option>
+              <option>United States</option>
+              <option>Canada</option>
+            </Form.Control>
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group>
+              <Form.Label>Postal Code</Form.Label>
+              <Form.Control
+                  type="text"
+                  placeholder="Postal Code"
+                  name="zip"
+                />
+              </Form.Group>
+          </Col>
+          <Col xs={1}></Col>
+          <Col xs={5}>
+          Knowing where your new hire will be conducting 90% of their work informs which provincial laws we review.
+          </Col>
+          <Col xs={1}></Col>
+        </Row>
+
+        <Row>
+          <Col><h4>What is your remote hire's residency status?</h4></Col>
+          <Col></Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <Form.Group>
+            <Form.Label>Residency</Form.Label>
+            <Form.Control as="select">
+              <option default>Select one</option>
+              <option>Citizen</option>
+              <option>Visa</option>
+            </Form.Control>
+            </Form.Group>
+          </Col>
+
+          <Col xs={1}></Col>
+          <Col sm={5}>
+          We can automate 90% of Canadian newhire cases. We can refer you to a specialist if your case is one of the 10%!
+          </Col>
+          <Col xs={1}></Col>
+        </Row>
+      </Container>
     </div>
   );
 }

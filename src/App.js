@@ -13,7 +13,7 @@ import "./styles/common.scss";
 import firebase from "firebase/app";
 import firebaseConfig from "./config/Firebase";
 
-
+// bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
