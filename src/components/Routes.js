@@ -46,7 +46,10 @@ function Routes() {
               </PageWithNav>
             </Route>
             <Route path="/profile">
+              {/* idk what the index means  */}
+              <PageWithNav index={4}>
               <EmployeeDetail />
+              </PageWithNav>
             </Route>
             <Route path="/addemployee">
               <AddEmployee />

@@ -10,6 +10,10 @@ import {
   ListItemText,
 } from "@material-ui/core";
 
+import ListGroup from 'react-bootstrap/ListGroup';
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+
 import {
   MailOutline as MailOutlineIcon,
   DesktopMac as DesktopMacIcon,
@@ -70,7 +74,41 @@ export default function EmployeeDetail() {
                     <CloseIcon fontSize="large" />
                 </ListItemIcon>
               <h1>{data.full_name} </h1>
-              <List>
+
+              {/* <Row>
+                <Col>
+                <DesktopMacIcon />
+                  {data.role}
+                </Col>
+                <Col>
+                <MailOutlineIcon />
+                {data.email}
+                </Col>
+                <Col>
+                <LanguageIcon />
+                {data.language.map((key, value) => {
+                      return value + 1 !== data.language.length
+                        ? key + ", "
+                        : key;
+                    })}
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                <LocationOnIcon />
+                {data.city + ", " + data.province}
+                </Col>
+                <Col>
+                <QueryBuilderIcon />
+                "Local Time: 10:00am, Wed, 24 Feb 2021"
+                </Col>
+                <Col>
+                </Col>
+              </Row> */}
+
+              
+               <List>
                 <ListItem>
                   <ListItemIcon>
                     <DesktopMacIcon />
@@ -105,7 +143,7 @@ export default function EmployeeDetail() {
                   <ListItemIcon>
                     <QueryBuilderIcon />
                   </ListItemIcon>
-                  <ListItemText primary="Local Time: 9:00am, Wed, 24 Feb 2021" />
+                  <ListItemText primary="Local Time: 10:00am, Wed, 24 Feb 2021" />
                 </ListItem>
               </List>
             </div>
