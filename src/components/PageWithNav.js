@@ -5,8 +5,8 @@ import HeaderBar from "./HeaderBar";
 export default function PageWithNav(props) {
   return (
     <>
-      <NavBar index={props.index} />
-      <HeaderBar />
+      {props.page === "dashboard" ? <NavBar index={props.index}/> : <> </>} 
+      <HeaderBar page={props.page} />
       {props.children}
     </>
   );

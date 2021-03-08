@@ -31,17 +31,17 @@ function Routes() {
         <Router>
           <Switch>
             <Route path="/employees">
-              <PageWithNav index={2}>
+              <PageWithNav index={2} page={"dashboard"}>
                 <Employees />
               </PageWithNav>
             </Route>
             <Route path="/payroll">
-              <PageWithNav index={1}>
+              <PageWithNav index={1} page={"dashboard"}>
                 <Payroll />
               </PageWithNav>
             </Route>
             <Route path="/documents">
-              <PageWithNav index={3}>
+              <PageWithNav index={3} page={"dashboard"}>
                 <Payroll />
               </PageWithNav>
             </Route>
@@ -49,7 +49,9 @@ function Routes() {
               <EmployeeDetail />
             </Route>
             <Route path="/addemployee">
-              <AddEmployee />
+              <PageWithNav index={0} page={"employee"}>
+                <AddEmployee />
+              </PageWithNav>
             </Route>
             <Route path="/offer">
               <GenerateOffer />
@@ -58,7 +60,7 @@ function Routes() {
               <ViewOffer />
             </Route>
             <Route path="*">
-              <PageWithNav index={0}>
+              <PageWithNav index={0} page={"dashboard"}>
                 <Dashboard />
               </PageWithNav>
             </Route>

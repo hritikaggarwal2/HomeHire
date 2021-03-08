@@ -18,6 +18,7 @@ import {
   Notifications as NotificationsIcon,
   More as MoreIcon,
   Add as AddIcon,
+  ArrowBack,
 } from "@material-ui/icons";
 
 // firebase
@@ -38,6 +39,22 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(5),
       width: "40%",
+    },
+  },
+  smallsearch: {
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade("#5D576B", 0.15),
+    "&:hover": {
+      backgroundColor: fade("#5D576B", 0.25),
+      transition: ".3s ease all",
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(5),
+      width: "20%",
     },
   },
   searchIcon: {
@@ -62,6 +79,17 @@ const useStyles = makeStyles((theme) => ({
       border: "1px solid #5D576B",
       backgroundColor: "#5D576B",
       color: "white",
+    },
+  },
+  backbutton: {
+    backgroundColor: "transparent",
+    border: "1px solid #aaa",
+    color: "#aaa",
+    boxShadow: "none",
+    "&:hover": {
+      backgroundColor: "#efefef",
+      color: "black",
+      textDecoration: "none",
     },
   },
   iconColor: {
@@ -94,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function HeaderBar() {
+export default function HeaderBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -184,7 +212,8 @@ export default function HeaderBar() {
     </Menu>
   );
 
-  return (
+  return props.page === "dashboard" ? 
+  (
     <>
       <AppBar className="headerWithNav" position="static">
         <Toolbar>
@@ -215,6 +244,76 @@ export default function HeaderBar() {
               New Employee
             </Button>
 
+            <IconButton
+              aria-label="show new notifications"
+              color="inherit"
+              className={classes.iconColor}
+            >
+              <Badge badgeContent={3} color="secondary">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+            <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+              className={classes.iconColor}
+            >
+              <AccountCircle />
+            </IconButton>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
+    </>
+  ) : (
+    <>
+      <AppBar className="headerWithoutNav" position="static">
+        <Toolbar>
+          <div className={classes.sectionDesktop}>
+            <Button
+              className={classes.backbutton}
+              variant="contained"
+              color="primary"
+              startIcon={<ArrowBack />}
+              component={Link} href="/"
+            >
+              Back to Dashboard
+            </Button>
+          </div>
+
+          <div className="grow" />
+
+          <div className={classes.smallsearch}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ "aria-label": "search" }}
+            />
+          </div>
+
+          <div className={classes.sectionDesktop}>
             <IconButton
               aria-label="show new notifications"
               color="inherit"

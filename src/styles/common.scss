@@ -60,6 +60,14 @@ ul {
   padding: 10px 0;
 }
 
+.headerWithoutNav {
+  width: 100vw !important;
+  background-color: #fefefe !important;
+  box-shadow: 0px 0px 0px #aaa !important;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 10px 0;
+}
+
 .no-margin {
   margin: 0 !important;
 }
@@ -224,7 +232,7 @@ ul {
 }
 
 .addEmp {
-  margin-top: 5%;
+  margin-top: 2%;
 
   h1 {
     color: $primary;

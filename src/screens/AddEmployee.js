@@ -4,13 +4,12 @@ import Button from "react-bootstrap/Button";
 
 import { Link } from "react-router-dom";
 
-import colors from "../styles/_constants.scss";
-
 // screens
 import NewHireStart from "../components/NewHireStart";
 import NewHireProfile from "../components/NewHireProfile";
 import NewHireBenefits from "../components/NewHireBenefits";
 import NewHireConfirmation from "../components/NewHireConfirmation";
+import HeaderBar from "../components/HeaderBar";
 
 function AddEmployee() {
   const steps = [{title: 'Employee Eligibility'}, {title: 'New Hire Profile'}, {title: 'New Hire Benefits'}, {title: 'Offer Letter'}];
@@ -52,9 +51,9 @@ function AddEmployee() {
             <Button onClick={handleBack} className="button bck">
               Back
             </Button>
-            <Button className="button nxt">
-              <Link to="./">Accept</Link>
-            </Button>
+            <Link to="./">
+              <Button className="button nxt">Accept</Button>
+            </Link>
           </div>
         </>
       ) : (
