@@ -42,11 +42,14 @@ function Routes() {
             </Route>
             <Route path="/documents">
               <PageWithNav index={3} page={"dashboard"}>
-                <Payroll />
+                <Documents />
               </PageWithNav>
             </Route>
             <Route path="/profile">
-              <EmployeeDetail />
+              {/* idk what the index means  */}
+              <PageWithNav index={4}>
+                <EmployeeDetail />
+              </PageWithNav>
             </Route>
             <Route path="/addemployee">
               <PageWithNav index={0} page={"employee"}>

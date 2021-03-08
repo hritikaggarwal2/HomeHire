@@ -47,6 +47,11 @@ ul {
   flex-direction: column;
 }
 
+.nameAndPic {
+  width: (100vw - $nav-size);
+  margin-left: $nav-size;
+}
+
 .closeButton {
   float: right;
 }
