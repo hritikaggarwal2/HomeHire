@@ -15,7 +15,7 @@ export default function NavBar(props) {
           <Link to="./employees">Employees</Link>
         </li>
         <li className={props.index === 3 ? "item-selected" : ""}>
-          <Link to="./documents">Legal Documents</Link>
+          <Link to="./documents">Documents</Link>
         </li>
         <li className={props.index === 4 ? "item-selected" : ""}>
           <Link to="./documents">Settings</Link>
