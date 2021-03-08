@@ -42,7 +42,7 @@ function Routes() {
             </Route>
             <Route path="/documents">
               <PageWithNav index={3}>
-                <Payroll />
+                <Documents />
               </PageWithNav>
             </Route>
             <Route path="/profile">

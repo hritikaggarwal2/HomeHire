@@ -40,16 +40,16 @@ export default class Dashboard extends React.Component {
         <Container>
           <Row className="top20">
             <Col>
-              <PayrollCard numTotal={numTotal} />
+              <SummaryCard numTotal={numTotal} />
             </Col>
             <Col>
-              <OnboardingCard />
+              <ExpensesCard />
             </Col>
           </Row>
 
           <Row className="top20">
             <Col>
-              <NotificationsCard />
+              <DetailsCard />
             </Col>
           </Row>
         </Container>
@@ -58,7 +58,7 @@ export default class Dashboard extends React.Component {
   }
 }
 
-function PayrollCard(props) {
+function SummaryCard(props) {
   return (
     <Card className="full-height">
       <Card.Body>
@@ -81,7 +81,7 @@ function PayrollCard(props) {
         <Table hover class="mb-5">
           <thead>
             <tr>
-              <th>March 2021 Total </th>
+              <th>February 2021 Total </th>
               <th>110,468</th>
               <th>100%</th>
             </tr>
@@ -124,7 +124,7 @@ function PayrollCard(props) {
   );
 }
 
-function OnboardingCard(props) {
+function ExpensesCard(props) {
   return (
     <Card className="full-height">
       <Card.Body>
@@ -158,7 +158,7 @@ function OnboardingCard(props) {
   );
 }
 
-function NotificationsCard(props) {
+function DetailsCard(props) {
   return (
     <Card className="full-height">
       <Card.Body>
@@ -212,7 +212,7 @@ function NotificationsCard(props) {
             <td>264917</td>
             <td>Ryan Gosling</td>
             <td>CloudyAI</td>
-            <td>Software Engineer</td>
+            <td>Principle Engineer</td>
             <td>10,000</td>
             <td>950</td>
             <td>10,950</td>
