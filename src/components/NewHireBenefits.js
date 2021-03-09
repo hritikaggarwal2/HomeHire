@@ -43,18 +43,18 @@ export default function NewHireBenefits() {
             </Col>
             <Col sm={4}>
             <div className="bencardcontent">
-              <h4>Annual Leave</h4>
-              <h3>2 weeks</h3>
-              <h4>Medical insurance</h4>
-              <h3>Standard</h3>
-              <h4>Maternity / Paternity Leave</h4>
-              <h3>Standard</h3>
+              <h6>Annual Leave</h6>
+              <h5>2 weeks</h5>
+              <h6>Medical insurance</h6>
+              <h5>Standard</h5>
+              <h6>Maternity / Paternity Leave</h6>
+              <h5>Standard</h5>
             </div>
             </Col>
             <Col sm={4}>
             <div className="bencardcontent">
-              <h4>Monthly Reimbursement</h4>
-              <h3>$60 internet</h3>
+              <h6>Monthly Reimbursement</h6>
+              <h5>$60 internet</h5>
             </div>
             </Col>
             <Col sm={1}>
@@ -77,20 +77,20 @@ export default function NewHireBenefits() {
             </Col>
             <Col sm={4}>
             <div className="bencardcontent">
-              <h4>Annual Leave</h4>
-              <h3>3 weeks</h3>
-              <h4>Medical insurance</h4>
-              <h3>Private</h3>
-              <h4>Maternity / Paternity Leave</h4>
-              <h3>Extended</h3>
+              <h6>Annual Leave</h6>
+              <h5>3 weeks</h5>
+              <h6>Medical insurance</h6>
+              <h5>Private</h5>
+              <h6>Maternity / Paternity Leave</h6>
+              <h5>Extended</h5>
             </div>
             </Col>
             <Col sm={4}>
             <div className="bencardcontent">
-              <h4>Monthly Reimbursement</h4>
-              <h3>$60 internet</h3>
-              <h4>Annual Reimbursement</h4>
-              <h3>$250 wellness</h3>
+              <h6>Monthly Reimbursement</h6>
+              <h5>$60 internet</h5>
+              <h6>Annual Reimbursement</h6>
+              <h5>$250 wellness</h5>
             </div>
             </Col>
             <Col sm={1}>
