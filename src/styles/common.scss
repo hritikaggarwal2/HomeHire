@@ -236,10 +236,6 @@ ul {
 .newHireStartContainer {
   width: 80%;
   margin: 0 auto 50px auto;
-
-  h4 {
-    color: white;
-  }
 }
 
 .addEmp {
@@ -266,6 +262,19 @@ ul {
     text-align: left;
     margin-top: 25px;
     font-weight: 600;
+  }
+  
+  h5 {
+    font-size: 15px;
+    color: $gray;
+    font-weight: 600;
+  }
+
+
+  .newHireStartContainer p {
+    border: 1px solid #ced4da;
+    padding: 20px;
+    border-radius: 15px;
   }
 
   .container > p {

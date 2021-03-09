@@ -38,7 +38,8 @@ export default function NewHireStart() {
           </Col>
           <Col xs={1}></Col>
           <Col xs={5}>
-          Knowing where your new hire will be conducting 90% of their work informs which provincial laws we review.
+            <p><h5>Minerva's note</h5>Knowing where your new hire will be conducting 90% of their work informs which provincial laws we review.</p>
+          
           </Col>
           
         </Row>
@@ -62,7 +63,7 @@ export default function NewHireStart() {
 
           <Col xs={1}></Col>
           <Col sm={5}>
-          We can automate 90% of Canadian newhire cases. We can refer you to a specialist if your case is one of the 10%!
+          <p><h5>Minerva's note</h5>We can automate 90% of Canadian newhire cases. We can refer you to a specialist if your case is one of the 10%!</p>
           </Col>
           
         </Row>
