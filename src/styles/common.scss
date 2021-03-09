@@ -288,17 +288,28 @@ ul {
   }
 
   .button {
-    width: 150px;
     line-height: 30px;
     border: 2px solid #ccc;
   }
 
   button.nxt {
+    width: 150px;
     margin-top: 3px;
     margin-left: 1px;
     border: 2px solid $primary;
     background: $primary;
     color: white;
+    font-weight: bold;
+  }
+
+  button.check {
+    width: 200px;
+    margin-top: 3px;
+    margin-left: 1px;
+    border: 2px solid $primary;
+    background: $primary;
+    color: white;
+    font-weight: bold;
   }
 
   button a {
@@ -316,6 +327,7 @@ ul {
   }
 
   button.bck {
+    width: 150px;
     border: 2px solid #ccc;
     background: $gray-light;
     color: black;

@@ -69,7 +69,7 @@ function AddEmployee() {
             </div>
           ) : (
             <div className="allButtons">
-            <Button onClick={handleNext} className="button nxt">
+            <Button onClick={handleNext} className="button check">
               Check Eligibility
             </Button>
             </div>
