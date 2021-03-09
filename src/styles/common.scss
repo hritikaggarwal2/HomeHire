@@ -10,6 +10,7 @@ body,
 html {
   margin: 0;
   font-family: "Inter", sans-serif !important;
+  color: $font-color;
 }
 
 h1,
@@ -235,6 +236,10 @@ ul {
 .newHireStartContainer {
   width: 80%;
   margin: 0 auto 50px auto;
+
+  h4 {
+    color: white;
+  }
 }
 
 .addEmp {
@@ -248,17 +253,19 @@ ul {
   }
 
   h3 {
-    color: $primary;
+    color: $header-color;
     font-size: 25px;
     padding: 1.5vw;
     text-align: center;
+    font-weight: 600;
   }
 
   h4 {
-    color: $primary;
+    color: $header-color;
     font-size: 20px;
     text-align: left;
     margin-top: 25px;
+    font-weight: 600;
   }
 
   .container > p {
@@ -331,7 +338,7 @@ ul {
 
       h1 {
         text-align: left;
-        color: black;
+        color: $font-color;
         font-weight: bold;
       }
 
@@ -345,18 +352,18 @@ ul {
         padding-bottom: 20px;
       }
 
-      h3 {
+      h5 {
         text-align: left;
-        color: black;
+        color: $font-color;
         font-size: 20px;
         font-weight: bold;
         margin: 0;
         padding: 0;
       }
 
-      h4 {
+      h6 {
         text-align: left;
-        color: black;
+        color: $font-color;
         font-size: 15px;
         margin: 0;
         padding: 0;
