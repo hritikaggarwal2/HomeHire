@@ -142,13 +142,15 @@ ul {
   h1,
   h2,
   h3 {
-    color: $primary;
+    color: $header-color;
     margin-top: 10px;
     margin-bottom: 10px;
   }
 
   h1 {
-    font-size: 30px;
+    font-weight: bold;
+    font-size: 32px;
+    color: $teal;
   }
 
   h2 {
@@ -157,27 +159,30 @@ ul {
 
   h3 {
     font-size: 20px;
-    text-align: center;
+    text-align: left;
   }
 
   .big-number {
-    text-align: center;
+    text-align: left;
     font-size: 3em;
     margin: 0.1em;
     font-weight: bold;
-    color: $primary;
+    color: $header-color;
   }
 
-  .shaded-background {
-    background-color: $primary-light;
+  .container {
+    max-width: 90%
   }
 
-  .top10 {
-    margin-top: 10px;
+  .card {
+    box-shadow: 2px 2px 5px $gray-light;
+    padding: 20px;
+    border-radius: .5rem;
+    // margin-top: 32px;
   }
 
-  .top20 {
-    margin-top: 20px;
+  .top32 {
+    margin-top: 32px;
   }
 
   .full-height {
@@ -190,8 +195,17 @@ ul {
   }
 
   .react-calendar {
-    width: 100%;
     border: none;
+  }
+
+  .dashboard-title {
+    font-weight: bold;
+    color: $primary;
+  }
+
+  .button-list-item {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -236,10 +250,6 @@ ul {
 .newHireStartContainer {
   width: 80%;
   margin: 0 auto 50px auto;
-
-  h4 {
-    color: white;
-  }
 }
 
 .addEmp {
@@ -266,6 +276,19 @@ ul {
     text-align: left;
     margin-top: 25px;
     font-weight: 600;
+  }
+  
+  h5 {
+    font-size: 15px;
+    color: $gray;
+    font-weight: 600;
+  }
+
+
+  .newHireStartContainer p {
+    border: 1px solid #ced4da;
+    padding: 20px;
+    border-radius: 15px;
   }
 
   .container > p {
