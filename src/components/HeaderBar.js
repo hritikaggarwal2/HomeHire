@@ -21,6 +21,8 @@ import {
   ArrowBack,
 } from "@material-ui/icons";
 
+import { useLocation, useHistory } from "react-router-dom";
+
 // firebase
 import firebase from "firebase/app";
 
@@ -129,6 +131,7 @@ export default function HeaderBar(props) {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const history = useHistory();
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -212,8 +215,7 @@ export default function HeaderBar(props) {
     </Menu>
   );
 
-  return props.page === "dashboard" ? 
-  (
+  return props.page === "dashboard" ? (
     <>
       <AppBar className="headerWithNav" position="static">
         <Toolbar>
@@ -239,11 +241,83 @@ export default function HeaderBar(props) {
               variant="contained"
               color="primary"
               startIcon={<AddIcon />}
-              component={Link} href="/addemployee"
+              component={Link}
+              href="/addemployee"
             >
               New Employee
             </Button>
 
+            <IconButton
+              aria-label="show new notifications"
+              color="inherit"
+              className={classes.iconColor}
+            >
+              <Badge badgeContent={3} color="secondary">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+            <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+              className={classes.iconColor}
+            >
+              <AccountCircle />
+            </IconButton>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
+    </>
+  ) : props.back === true ? (
+    <>
+      <AppBar className="headerWithoutNav" position="static">
+        <Toolbar>
+          <div className={classes.sectionDesktop}>
+            <Button
+              className={classes.backbutton}
+              variant="contained"
+              color="primary"
+              startIcon={<ArrowBack />}
+              component={Link}
+              onClick={() => history.goBack()}
+            >
+              Go Back
+            </Button>
+          </div>
+
+          <div className="grow" />
+
+          <div className={classes.smallsearch}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ "aria-label": "search" }}
+            />
+          </div>
+
+          <div className={classes.sectionDesktop}>
             <IconButton
               aria-label="show new notifications"
               color="inherit"
@@ -291,7 +365,8 @@ export default function HeaderBar(props) {
               variant="contained"
               color="primary"
               startIcon={<ArrowBack />}
-              component={Link} href="/"
+              component={Link}
+              href="/"
             >
               Back to Dashboard
             </Button>

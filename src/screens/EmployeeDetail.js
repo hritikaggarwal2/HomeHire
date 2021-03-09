@@ -10,19 +10,14 @@ import {
   ListItemText,
 } from "@material-ui/core";
 
-import ListGroup from 'react-bootstrap/ListGroup';
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-
 import {
   MailOutline as MailOutlineIcon,
   DesktopMac as DesktopMacIcon,
   Language as LanguageIcon,
   LocationOn as LocationOnIcon,
   QueryBuilder as QueryBuilderIcon,
-  Close as CloseIcon
+  Close as CloseIcon,
 } from "@material-ui/icons";
-
 
 import { useLocation, useHistory } from "react-router-dom";
 
@@ -34,17 +29,22 @@ import { EmployeeClassConverter } from "../data/EmployeeClass";
 // firebase stuff
 import firebase from "firebase/app";
 import "firebase/firestore";
+import "firebase/storage";
 
 // css
 import "../styles/common.scss";
-import img from "../data/user.jpg";
+import img from "../data/user.svg";
 
-export default function EmployeeDetail() {
+export default function EmployeeDetail(props) {
   const db = firebase.firestore();
+  const storage = firebase.storage();
   const location = useLocation();
-  const userId = location.state.key;
+  const userId =
+    location.state?.key === undefined ? props.uid : location.state?.key;
+
   const [data, setData] = useState(null);
   const history = useHistory();
+  const [image, setImage] = useState(img);
 
   useEffect(() => {
     db.collection("employees")
@@ -52,7 +52,22 @@ export default function EmployeeDetail() {
       .withConverter(EmployeeClassConverter)
       .get()
       .then((snapshot) => {
-        setData(snapshot.data());
+        console.log(snapshot.data().image);
+        if (snapshot.data().image == null) {
+          setData(snapshot.data());
+          return;
+        }
+
+        storage
+          .refFromURL(snapshot.data().image)
+          .getDownloadURL()
+          .then((url) => {
+            setImage(url);
+            setData(snapshot.data());
+          })
+          .catch(() => {
+            setData(snapshot.data());
+          });
       })
       .catch((error) => {
         console.log("Error getting document:", error);
@@ -66,13 +81,12 @@ export default function EmployeeDetail() {
       {!data ? (
         <Loading />
       ) : (
-        <div className="pageWithNav userProfile">
+        <div className={(props.uid ? "pageWithNav " : "") + "userProfile"}>
           <div>
-            <img src={img} alt="user profile" />
+            <div className="sqContainer">
+              <img src={image} alt="user profile" />
+            </div>
             <div>
-                <ListItemIcon className="closeButton" onClick={() => history.goBack()}>
-                    <CloseIcon fontSize="large" />
-                </ListItemIcon>
               <h1>{data.full_name} </h1>
 
               {/* <Row>
@@ -107,8 +121,7 @@ export default function EmployeeDetail() {
                 </Col>
               </Row> */}
 
-              
-               <List>
+              <List>
                 <ListItem>
                   <ListItemIcon>
                     <DesktopMacIcon />

@@ -10,8 +10,8 @@ import {
   Table,
 } from "react-bootstrap";
 
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 export default class Dashboard extends React.Component {
   state = {
@@ -20,6 +20,7 @@ export default class Dashboard extends React.Component {
 
   componentDidMount() {
     let addEmployee = false;
+    console.log(this.props?.user);
     if (this.props?.location?.state) {
       addEmployee = this.props.location.state.addEmployee;
     }
@@ -37,7 +38,14 @@ export default class Dashboard extends React.Component {
     let numTotal = numOnboarding + numHired;
     return (
       // toggle the props passed to DashboardContent to control which type of dashboard is generated
-      <DashboardContent employerView={false} numTotal={numTotal} numOnboarding={numOnboarding} />
+      <DashboardContent
+        user={this.props.user}
+        employerView={
+          this.props.employerView !== undefined ? this.props.employerView : true
+        }
+        numTotal={numTotal}
+        numOnboarding={numOnboarding}
+      />
     );
   }
 }
@@ -49,7 +57,7 @@ function DashboardContent(props) {
   const [defaultDate] = useState(new Date(2021, 2, 22));
   if (props.employerView) {
     return (
-      <div class="pageWithNav dashboard">
+      <div className="pageWithNav dashboard">
         <Container>
           <h1>Dashboard</h1>
           {/* top card of the dashboard */}
@@ -57,19 +65,19 @@ function DashboardContent(props) {
             <Row>
               <Col xs={3}>
                 <h3>Teams</h3>
-                <p class="big-number">1</p>
+                <p className="big-number">1</p>
               </Col>
               <Col xs={3}>
                 <h3>Total employees</h3>
-                <p class="big-number">{props.numTotal}</p>
+                <p className="big-number">{props.numTotal}</p>
               </Col>
               <Col xs={3}>
                 <h3>Onboarding</h3>
-                <p class="big-number">{props.numOnboarding}</p>
+                <p className="big-number">{props.numOnboarding}</p>
               </Col>
               <Col xs={3}>
                 <h3>Needs Attention</h3>
-                <p class="big-number">0</p>
+                <p className="big-number">0</p>
               </Col>
             </Row>
           </Card>
@@ -88,20 +96,20 @@ function DashboardContent(props) {
     );
   } else {
     return (
-      <div class="pageWithNav dashboard">
+      <div className="pageWithNav dashboard">
         <Container>
           <h1>Dashboard</h1>
           {/* top card of the dashboard */}
           <Card className="shaded-background top10">
             <Card.Body>
               <Card.Title className="no-margin">
-                  Hi Ryan! Welcome to Minerva.
+                Hi {props.user?.full_name?.split(" ")[0]}! Welcome to Minerva.
               </Card.Title>
             </Card.Body>
           </Card>
           {/* This row contains payroll, onboading, notification cards */}
           <Row className="top20">
-            <Col xs={12} sm={6} >
+            <Col xs={12} sm={6}>
               <Card className="shaded-background full-height">
                 <Card.Body>
                   <Card.Title>Things to do</Card.Title>
@@ -120,7 +128,7 @@ function DashboardContent(props) {
               </Card>
             </Col>
             <Col>
-              <Calendar defaultValue={defaultDate}/>
+              <Calendar defaultValue={defaultDate} />
             </Col>
           </Row>
           <Row className="top20">
@@ -132,9 +140,7 @@ function DashboardContent(props) {
                     <ListGroup.Item>
                       3 new documents are available to view
                     </ListGroup.Item>
-                    <ListGroup.Item>
-                      Welcome to Minerva!
-                    </ListGroup.Item>
+                    <ListGroup.Item>Welcome to Minerva!</ListGroup.Item>
                   </ListGroup>
                 </Card.Body>
               </Card>
@@ -148,7 +154,6 @@ function DashboardContent(props) {
     );
   }
 }
-
 
 function PayrollCard(props) {
   return (

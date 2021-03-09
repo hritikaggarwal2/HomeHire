@@ -1,10 +1,15 @@
 import { useState } from "react";
-import firebase from "firebase/app";
 import { StyleSheet } from "@react-pdf/renderer";
 import { PDFViewer } from "@react-pdf/renderer";
 import { Form, Button } from "react-bootstrap";
 
 import Offer from "../components/Offer";
+
+// firebase stuff
+import firebase from "firebase/app";
+import "firebase/firestore";
+
+import { EmployeeClassConverter } from "../data/EmployeeClass";
 
 const styles = StyleSheet.create({
   viewer: {
@@ -15,15 +20,34 @@ const styles = StyleSheet.create({
 
 export default function ViewOffer(props) {
   const [check, isCheck] = useState(false);
+  const db = firebase.firestore();
 
   function back() {}
 
-  function decline() {}
+  function decline() {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log("Can't log out");
+      });
+  }
 
   function accept() {
     if (!check) {
       alert("Please accept the terms and conditions first!");
+      return;
     }
+
+    db.collection("employees")
+      .doc(props.uid)
+      .update({
+        isVerified: true,
+      })
+      .catch((error) => {
+        console.log("Error getting document:", error);
+      });
   }
 
   return (
@@ -41,9 +65,9 @@ export default function ViewOffer(props) {
         />
       </Form.Group>
       <div className="button-container">
-        <Button variant="outline-secondary" onClick={back}>
+        {/* <Button variant="outline-secondary" onClick={back}>
           Back
-        </Button>
+        </Button> */}
         <Button variant="secondary" onClick={decline}>
           Decline
         </Button>

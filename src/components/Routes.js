@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // user provider
@@ -19,56 +20,114 @@ import GenerateOffer from "../screens/GenerateOffer";
 // components
 import PageWithNav from "../components/PageWithNav";
 
+// firebase
+import firebase from "firebase/app";
+
+// class for data processing
+import { EmployeeClassConverter } from "../data/EmployeeClass";
+
 function Routes() {
   const user = useUser().user;
   const load = useUser().load;
 
+  const db = firebase.firestore();
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    if (user !== null) {
+      console.log(user.email);
+
+      db.collection("employees")
+        .doc(user.uid)
+        .withConverter(EmployeeClassConverter)
+        .onSnapshot(
+          (snapshot) => {
+            setData(snapshot.data());
+          },
+          (error) => {
+            console.log("Error getting document:", error);
+          }
+        );
+    }
+
+    return () => {};
+  }, [user]);
+
   return (
     <>
-      {!load ? (
+      {!load || data === null ? (
         <Loading />
       ) : user ? (
-        <Router>
-          <Switch>
-            <Route path="/employees">
-              <PageWithNav index={2} page={"dashboard"}>
-                <Employees />
-              </PageWithNav>
-            </Route>
-            <Route path="/payroll">
-              <PageWithNav index={1} page={"dashboard"}>
-                <Payroll />
-              </PageWithNav>
-            </Route>
-            <Route path="/documents">
-              <PageWithNav index={3} page={"dashboard"}>
-                <Documents />
-              </PageWithNav>
-            </Route>
-            <Route path="/profile">
-              {/* idk what the index means  */}
-              <PageWithNav index={4}>
-                <EmployeeDetail />
-              </PageWithNav>
-            </Route>
-            <Route path="/addemployee">
-              <PageWithNav index={0} page={"employee"}>
-                <AddEmployee />
-              </PageWithNav>
-            </Route>
-            <Route path="/offer">
-              <GenerateOffer />
-            </Route>
-            <Route path="/myoffer">
-              <ViewOffer />
-            </Route>
-            <Route path="*">
-              <PageWithNav index={0} page={"dashboard"}>
-                <Dashboard />
-              </PageWithNav>
-            </Route>
-          </Switch>
-        </Router>
+        data.isEmployee ? (
+          <Router>
+            <Switch>
+              <Route path="/employees">
+                <PageWithNav index={2} page={"dashboard"}>
+                  <Employees />
+                </PageWithNav>
+              </Route>
+              <Route path="/payroll">
+                <PageWithNav index={1} page={"dashboard"}>
+                  <Payroll />
+                </PageWithNav>
+              </Route>
+              <Route path="/profile">
+                {/* idk what the index means  */}
+                <PageWithNav back={true} index={4}>
+                  <EmployeeDetail />
+                </PageWithNav>
+              </Route>
+              <Route path="/addemployee">
+                <PageWithNav index={0}>
+                  <AddEmployee />
+                </PageWithNav>
+              </Route>
+              <Route path="/offer">
+                <PageWithNav index={0}>
+                  <GenerateOffer />
+                </PageWithNav>
+              </Route>
+              <Route path="*">
+                <PageWithNav index={0} page={"dashboard"}>
+                  <Dashboard user={data} employerView={true} />
+                </PageWithNav>
+              </Route>
+            </Switch>
+          </Router>
+        ) : !data.isVerified ? (
+          <Router>
+            <Switch>
+              <Route path="*">
+                <ViewOffer user={data} uid={user.uid} />
+              </Route>
+            </Switch>
+          </Router>
+        ) : (
+          <Router>
+            <Switch>
+              <Route path="/documents">
+                <PageWithNav type={2} index={3} page={"dashboard"}>
+                  <Documents />
+                </PageWithNav>
+              </Route>
+              <Route path="/profile">
+                <PageWithNav type={2} index={1} page={"dashboard"}>
+                  <EmployeeDetail uid={user.uid} />
+                </PageWithNav>
+              </Route>
+              <Route path="/myoffer">
+                <PageWithNav type={2} index={0}>
+                  <ViewOffer />
+                </PageWithNav>
+              </Route>
+              <Route path="*">
+                <PageWithNav type={2} index={0} page={"dashboard"}>
+                  <Dashboard user={data} employerView={false} />
+                </PageWithNav>
+              </Route>
+            </Switch>
+          </Router>
+        )
       ) : (
         <Router>
           <Switch>

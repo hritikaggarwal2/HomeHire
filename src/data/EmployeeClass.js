@@ -14,7 +14,10 @@ export class EmployeeClass {
     physical_address,
     start_date,
     status,
-    department
+    department,
+    isVerified,
+    isEmployee,
+    image
   ) {
     this.full_name = full_name;
     this.email = email;
@@ -31,6 +34,9 @@ export class EmployeeClass {
     this.start_date = start_date;
     this.status = status;
     this.department = department;
+    this.isVerified = isVerified;
+    this.isEmployee = isEmployee;
+    this.image = image;
   }
 }
 
@@ -53,6 +59,9 @@ export let EmployeeClassConverter = {
       start_date: EmployeeClass.start_date,
       status: EmployeeClass.status,
       department: EmployeeClass.department,
+      isVerified: EmployeeClass.isVerified,
+      isEmployee: EmployeeClass.isEmployee,
+      image: EmployeeClass.image,
     };
   },
   fromFirestore: function (snapshot, options) {
@@ -72,7 +81,10 @@ export let EmployeeClassConverter = {
       data.physical_address,
       data.start_date,
       data.status,
-      data.department
+      data.department,
+      data.isVerified,
+      data.isEmployee,
+      data.image
     );
   },
 };

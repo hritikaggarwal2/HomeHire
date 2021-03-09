@@ -183,7 +183,8 @@ ul {
     height: 100%;
   }
 
-  .list-group-item, .list-group-item.disabled {
+  .list-group-item,
+  .list-group-item.disabled {
     background-color: $primary-light;
   }
 
@@ -272,7 +273,7 @@ ul {
   .allButtons {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 3%;
+    padding-bottom: 50px;
   }
 
   .MuiInput-underline:after {
@@ -399,7 +400,6 @@ ul {
   }
 
   .review {
-
     .button {
       width: 250px;
       line-height: 30px;
@@ -444,7 +444,6 @@ ul {
         text-decoration: underline;
       }
     }
-
   }
 
   .MuiButton-containedPrimary:hover {
@@ -484,10 +483,19 @@ ul {
 }
 
 .userProfile {
-  img {
-    width: 15vw;
+  .sqContainer {
+    width: 250px !important;
+    height: 250px !important;
     border-radius: 100%;
+    overflow: hidden;
     margin: 20px;
+    flex: 0 0 250px;
+  }
+
+  img {
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
   }
 
   & > div {

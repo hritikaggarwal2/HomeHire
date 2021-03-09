@@ -10,7 +10,7 @@ import {
 import { useHistory } from "react-router-dom";
 
 // class for data processing
-import { EmployeeClassConverter } from "../data/EmployeeClass";
+import { EmployeeClassConverter, EmployeeClass } from "../data/EmployeeClass";
 
 // firebase stuff
 import firebase from "firebase/app";
@@ -22,27 +22,49 @@ export default function Employees() {
   const history = useHistory();
 
   // FOR ADDING DATA TO FIRESTORE
-  // db.collection("employees")
-  //   .doc()
-  //   .withConverter(EmployeeClassConverter)
-  //   .set(
-  //     new EmployeeClass(
-  //       "Ryan Thomas Gostling",
-  //       "ryan.gosling@lalalland.com",
-  //       "Principal Engineer",
-  //       "November 12, 1980",
-  //       ["English", "French"],
-  //       "London",
-  //       "Ontario",
-  //       "Canada",
-  //       "+1(250)555-0199",
-  //       "+1(250)660-2345",
-  //       "3616 Dundas St., London, Ontario, N6B 3L5",
-  //       "4086 René-Lévesque Blvd., Montreal, Québec, H3B 4W8"
-  //     )
-  //   );
+  function addFakeEmp() {
+    const email = "test@test.com";
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, email)
+      .then((userCredential) => {
+        // Signed in
+        // Send user data to another page
+        var user = userCredential.user;
+        db.collection("employees")
+          .doc(user.uid)
+          .withConverter(EmployeeClassConverter)
+          .set(
+            new EmployeeClass(
+              "Stan Lee",
+              email,
+              "Senior HR",
+              "December 28, 1922",
+              ["English"],
+              "Seattle",
+              "Washington",
+              "United States",
+              "+1(250)555-0199",
+              "+1(250)660-2345",
+              "400 Broad St, Seattle",
+              "400 Broad St, Seattle",
+              "July 21, 2014",
+              "Employee",
+              "Hiring",
+              true,
+              false,
+              null
+            )
+          );
+      })
+      .catch((error) => {
+        console.log("USER CREATION ERROR - " + error.message);
+        return;
+      });
+  }
 
   useEffect(() => {
+    // addFakeEmp();
     db.collection("employees")
       .withConverter(EmployeeClassConverter)
       .get()
