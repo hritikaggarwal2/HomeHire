@@ -312,6 +312,11 @@ ul {
     font-weight: bold;
   }
 
+  button.check:hover {
+    background: $teal-dark;
+    color: white;
+  }
+
   button a {
     text-decoration: none;
     color: $primary;
@@ -322,19 +327,21 @@ ul {
   }
 
   button.nxt:hover {
-    background: $primary;
-    color: $white;
+    background: $teal-dark;
+    color: white;
   }
 
   button.bck {
     width: 150px;
-    border: 2px solid #ccc;
-    background: $gray-light;
-    color: black;
+    border: 2px solid $primary;
+    background: transparent;
+    color: $primary;
+    font-weight: bold;
   }
 
   button.bck:hover {
-    background: $gray;
+    background: $teal-dark;
+    color: white;
   }
 
   .benefits {
