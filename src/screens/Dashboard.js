@@ -59,9 +59,9 @@ function DashboardContent(props) {
     return (
       <div className="pageWithNav dashboard">
         <Container>
-          <h1>Dashboard</h1>
+          <h1 class="top32 dashboard-title" >Dashboard</h1>
           {/* top card of the dashboard */}
-          <Card className="shaded-background top10">
+          <Card className="  top10">
             <Row>
               <Col xs={3}>
                 <h3>Teams</h3>
@@ -82,13 +82,13 @@ function DashboardContent(props) {
             </Row>
           </Card>
           {/* This row contains payroll, onboading, notification cards */}
-          <Row className="top20">
+          <Row className="top32">
             <Col xs={12} sm={7}>
               <PayrollCard numTotal={props.numTotal} />
             </Col>
             <Col>
               <OnboardingCard />
-              <NotificationsCard />
+              <NotificationsCard className="top32"/>
             </Col>
           </Row>
         </Container>
@@ -98,42 +98,43 @@ function DashboardContent(props) {
     return (
       <div className="pageWithNav dashboard">
         <Container>
-          <h1>Dashboard</h1>
           {/* top card of the dashboard */}
-          <Card className="shaded-background top10">
+          <Card className="top32">
             <Card.Body>
-              <Card.Title className="no-margin">
+              <Card.Title className="no-margin dashboard-title">
                 Hi {props.user?.full_name?.split(" ")[0]}! Welcome to Minerva.
               </Card.Title>
             </Card.Body>
           </Card>
           {/* This row contains payroll, onboading, notification cards */}
-          <Row className="top20">
+          <Row className="top32">
             <Col xs={12} sm={6}>
-              <Card className="shaded-background full-height">
+              <Card className="  full-height">
                 <Card.Body>
-                  <Card.Title>Things to do</Card.Title>
+                  <Card.Title>Things to do (2)</Card.Title>
                   <ListGroup variant="flush">
-                    <ListGroup.Item action>
+                    <ListGroup.Item action className="button-list-item">
                       Review and sign offer letter by the 22nd
+                      <Button href="/documents" variant="outline-dark" size="sm">View</Button>
                     </ListGroup.Item>
-                    <ListGroup.Item action>
+                    <ListGroup.Item action className="button-list-item">
                       Fill out remaining profile information
+                      <Button href="/profile" variant="outline-dark" size="sm">View</Button>
                     </ListGroup.Item>
-                    <ListGroup.Item disabled>
+                    <ListGroup.Item disabled className="button-list-item">
                       View onboarding documents (sign offer first)
                     </ListGroup.Item>
                   </ListGroup>
                 </Card.Body>
               </Card>
             </Col>
-            <Col>
+            <Col align="center">
               <Calendar defaultValue={defaultDate} />
             </Col>
           </Row>
-          <Row className="top20">
+          <Row className="top32">
             <Col xs={12} sm={6}>
-              <Card className="shaded-background full-height">
+              <Card className="  full-height">
                 <Card.Body>
                   <Card.Title>What's new</Card.Title>
                   <ListGroup variant="flush">
@@ -201,7 +202,7 @@ function PayrollCard(props) {
 
 function OnboardingCard(props) {
   return (
-    <Card className="shaded-background">
+    <Card className=" ">
       <Card.Body>
         <Row>
           <Card.Title>Onboarding Status</Card.Title>
@@ -251,7 +252,7 @@ function OnboardingCard(props) {
 
 function NotificationsCard(props) {
   return (
-    <Card className="shaded-background top10">
+    <Card className={props.className}>
       <Card.Body>
         <Card.Title>Notifications</Card.Title>
         <ListGroup variant="flush">
