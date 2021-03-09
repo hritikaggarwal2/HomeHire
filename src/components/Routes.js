@@ -55,7 +55,7 @@ function Routes() {
 
   return (
     <>
-      {!load || data === null ? (
+      {!load || (user != null && data === null) ? (
         <Loading />
       ) : user ? (
         data.isEmployee ? (
