@@ -1,13 +1,20 @@
 // Colors
 $white: #ffffff;
-$primary-light: #bbb6c7;
-$primary: #5d576b;
-$primary-dark: #312a42;
-$light: #fffae3;
+$teal: #42B4B7;
+$teal-dark: #1C9295;
+$bg: #D7DEF7;
+$bg-light: #F5F8FF;
+$primary-light: $white;
+$primary: $teal;
+$primary-dark: $teal-dark;
+$light: $bg-light;
 $gray-light: #efefef;
 $gray: #aaa;
-
 $save: #ec5766;
+$circle-color: #42B4B7;
+$header-color: #333333;
+$font-color: #444444;
+
 
 // Sizes
 $nav-size: 20vw;
