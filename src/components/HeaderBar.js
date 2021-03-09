@@ -236,16 +236,7 @@ export default function HeaderBar(props) {
           <div className="grow" />
 
           <div className={classes.sectionDesktop}>
-            <Button
-              className={classes.button}
-              variant="contained"
-              color="primary"
-              startIcon={<AddIcon />}
-              component={Link}
-              href="/addemployee"
-            >
-              New Employee
-            </Button>
+            <AddEmployeeButton classes={classes} noAddEmployee={props.noAddEmployee}/>
 
             <IconButton
               aria-label="show new notifications"
@@ -426,5 +417,24 @@ export default function HeaderBar(props) {
       {renderMobileMenu}
       {renderMenu}
     </>
+  );
+}
+
+function AddEmployeeButton(props) {
+  console.log("noaddemployee: " + props.noAddEmployee);
+  if (props.noAddEmployee) {
+    return(<></>);
+  }
+  return(
+    <Button
+      className={props.classes.button}
+      variant="contained"
+      color="primary"
+      startIcon={<AddIcon />}
+      component={Link}
+      href="/addemployee"
+    >
+      New Employee
+    </Button>
   );
 }

@@ -34,7 +34,7 @@ export default class Dashboard extends React.Component {
 
   render() {
     let numOnboarding = this.state.numOnboarding;
-    let numHired = 2;
+    let numHired = 3;
     let numTotal = numOnboarding + numHired;
     return (
       // toggle the props passed to DashboardContent to control which type of dashboard is generated

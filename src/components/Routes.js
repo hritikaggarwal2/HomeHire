@@ -121,7 +121,7 @@ function Routes() {
                 </PageWithNav>
               </Route>
               <Route path="*">
-                <PageWithNav type={2} index={0} page={"dashboard"}>
+                <PageWithNav type={2} index={0} page={"dashboard"} noAddEmployee={true}>
                   <Dashboard user={data} employerView={false} />
                 </PageWithNav>
               </Route>

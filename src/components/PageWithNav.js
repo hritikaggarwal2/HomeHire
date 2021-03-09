@@ -11,7 +11,7 @@ export default function PageWithNav(props) {
       ) : (
         <> </>
       )}
-      <HeaderBar back={props.back} page={props.page} />
+      <HeaderBar back={props.back} page={props.page} noAddEmployee={props.noAddEmployee}/>
       {props.children}
     </>
   );
