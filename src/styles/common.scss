@@ -288,17 +288,33 @@ ul {
   }
 
   .button {
-    width: 150px;
     line-height: 30px;
     border: 2px solid #ccc;
   }
 
   button.nxt {
+    width: 150px;
     margin-top: 3px;
     margin-left: 1px;
     border: 2px solid $primary;
-    background: transparent;
-    color: $primary;
+    background: $primary;
+    color: white;
+    font-weight: bold;
+  }
+
+  button.check {
+    width: 200px;
+    margin-top: 3px;
+    margin-left: 1px;
+    border: 2px solid $primary;
+    background: $primary;
+    color: white;
+    font-weight: bold;
+  }
+
+  button.check:hover {
+    background: $teal-dark;
+    color: white;
   }
 
   button a {
@@ -311,18 +327,21 @@ ul {
   }
 
   button.nxt:hover {
-    background: $primary;
-    color: $white;
+    background: $teal-dark;
+    color: white;
   }
 
   button.bck {
-    border: 2px solid #ccc;
-    background: $gray-light;
-    color: black;
+    width: 150px;
+    border: 2px solid $primary;
+    background: transparent;
+    color: $primary;
+    font-weight: bold;
   }
 
   button.bck:hover {
-    background: $gray;
+    background: $teal-dark;
+    color: white;
   }
 
   .benefits {
