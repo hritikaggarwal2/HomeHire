@@ -95,7 +95,7 @@ ul {
 
 // NAV BAR
 .nav-custom {
-  background: $primary;
+  background: $bg;
   width: $nav-size;
   height: 100vh;
   position: fixed;
@@ -103,15 +103,15 @@ ul {
   ul {
   }
 
-  h3 {
-    font-weight: 500;
-    color: $light;
-    padding: 5vw;
-    text-align: center;
+  img {
+    width: 250px;
+    margin: 30px 10px;
+    margin-top: 50px;
+    padding: 10px 15px;
   }
 
   a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 21px;
     display: block;
@@ -120,13 +120,13 @@ ul {
   }
 
   a:hover {
-    color: white;
+    color: black;
     padding: 10px 25px;
     text-decoration: none;
   }
 
   .item-selected {
-    text-decoration: underline;
+    font-weight: bold;
 
     a:hover {
       padding: 10px 15px;

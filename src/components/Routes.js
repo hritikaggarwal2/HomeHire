@@ -73,17 +73,17 @@ function Routes() {
               </Route>
               <Route path="/profile">
                 {/* idk what the index means  */}
-                <PageWithNav back={true} index={4}>
+                <PageWithNav back={true} index={4} page={"nonav"}>
                   <EmployeeDetail />
                 </PageWithNav>
               </Route>
-              <Route path="/addemployee">
-                <PageWithNav index={0}>
+              <Route path="/addemployee" >
+                <PageWithNav index={0} page={"nonav"}>
                   <AddEmployee />
                 </PageWithNav>
               </Route>
               <Route path="/offer">
-                <PageWithNav index={0}>
+                <PageWithNav index={0} page={"nonav"}>
                   <GenerateOffer />
                 </PageWithNav>
               </Route>
@@ -106,22 +106,22 @@ function Routes() {
           <Router>
             <Switch>
               <Route path="/documents">
-                <PageWithNav type={2} index={3} page={"dashboard"}>
+                <PageWithNav type={2} index={5} page={"employee"}>
                   <Documents />
                 </PageWithNav>
               </Route>
               <Route path="/profile">
-                <PageWithNav type={2} index={1} page={"dashboard"}>
+                <PageWithNav type={2} index={1} page={"employee"}>
                   <EmployeeDetail uid={user.uid} />
                 </PageWithNav>
               </Route>
               <Route path="/myoffer">
-                <PageWithNav type={2} index={0}>
+                <PageWithNav type={2} index={0} page={"nonav"}>
                   <ViewOffer />
                 </PageWithNav>
               </Route>
               <Route path="*">
-                <PageWithNav type={2} index={0} page={"dashboard"} noAddEmployee={true}>
+                <PageWithNav type={2} index={0} page={"employee"} noAddEmployee={true}>
                   <Dashboard user={data} employerView={false} />
                 </PageWithNav>
               </Route>

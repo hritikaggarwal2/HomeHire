@@ -6,7 +6,7 @@ export default function PageWithNav(props) {
   console.log(props.back);
   return (
     <>
-      {props?.page === "dashboard" ? (
+      {props?.page !== "nonav" ? (
         <NavBar type={props.type} index={props.index} />
       ) : (
         <> </>
