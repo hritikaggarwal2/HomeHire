@@ -180,14 +180,14 @@ function PayrollCard(props) {
               <td>Sent</td>
             </tr>
             <tr>
-              <td>Alice Oh</td>
+              <td>Leonardo DiCaprio</td>
               <td>10,000</td>
               <td>2,000</td>
               <td>12,000</td>
               <td>Sent</td>
             </tr>
             <tr>
-              <td>Alice Oh</td>
+              <td>Tom Hanks</td>
               <td>10,000</td>
               <td>2,000</td>
               <td>12,000</td>
@@ -216,7 +216,7 @@ function OnboardingCard(props) {
             </thead>
             <tbody>
               <tr>
-                <td>Jamie Cho</td>
+                <td>Ryan Gosling</td>
                 <td>Reviewing offer</td>
                 <td>
                   <Button variant="outline-dark" size="sm">
@@ -225,8 +225,8 @@ function OnboardingCard(props) {
                 </td>
               </tr>
               <tr>
-                <td>Jamie Cho</td>
-                <td>Reviewing offer</td>
+                <td>Ryan Gosling</td>
+                <td>Created profile</td>
                 <td>
                   <Button variant="outline-dark" size="sm">
                     View
@@ -234,8 +234,8 @@ function OnboardingCard(props) {
                 </td>
               </tr>
               <tr>
-                <td>Jamie Cho</td>
-                <td>Reviewing offer</td>
+                <td>Tom Hanks</td>
+                <td>Signed offer</td>
                 <td>
                   <Button variant="outline-dark" size="sm">
                     View
