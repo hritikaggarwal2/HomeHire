@@ -30,6 +30,17 @@ export default function ViewOffer(props) {
       });
   }
 
+  function skip() {
+    db.collection("employees")
+    .doc(props.uid)
+    .update({
+      isVerified: true,
+    })
+    .catch((error) => {
+      console.log("Error getting document:", error);
+    });
+  }
+
   function accept() {
     if (!check) {
       alert("Please accept the terms and conditions first!");
@@ -67,8 +78,11 @@ export default function ViewOffer(props) {
         {/* <Button variant="outline-secondary" onClick={back}>
           Back
         </Button> */}
-        <Button className="button bck" onClick={decline}>
+        {/* <Button className="button bck" onClick={decline}>
           Decline
+        </Button> */}
+        <Button className="button bck" onClick={skip}>
+          Skip for now
         </Button>
         <Button className="button nxt" onClick={accept}>
           Accept and Continue
