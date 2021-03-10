@@ -18,13 +18,13 @@ export default function NewHireConfirmation() {
         <Row>
           <Col sm={12}>
             <div className="docreview">
-              <h4>Offer Documents (2)</h4>
+              <h4 className="extra-spacing">Offer Documents (2)</h4>
               <Row className="justify-content-md-center">
                 <Col sm={5}>
                   <Card className="doccard">
                     <Image src={reservedOfferLetter} thumbnail fluid />
                     <h4>Document 1: New Hire Offer</h4>
-                    <h5>Created: 02/21/2021</h5>
+                    <h5>Created: 03/10/2021</h5>
                     <Row>
                       <Col sm={4}>
                         <Link target="_blank" to="./offer">
@@ -44,7 +44,7 @@ export default function NewHireConfirmation() {
                   <Card className="doccard">
                     <Image src={contract} thumbnail fluid />
                     <h4>Document 2: Minerva Leasing Contract</h4>
-                    <h5>Created: 02/21/2021</h5>
+                    <h5>Created: 03/10/2021</h5>
                     <Row>
                       <Col sm={4}>
                         <Link target="_blank" to="./offer">

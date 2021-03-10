@@ -29,10 +29,11 @@ import firebase from "firebase/app";
 const useStyles = makeStyles((theme) => ({
   search: {
     position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade("#aaa", 0.15),
+    borderRadius: "10px",
+    border: "1px solid #D7DEF7",
+    backgroundColor: "white",
     "&:hover": {
-      backgroundColor: fade("#aaa", 0.25),
+      backgroundColor: "white",
       transition: ".3s ease all",
     },
     marginRight: theme.spacing(2),
@@ -45,10 +46,11 @@ const useStyles = makeStyles((theme) => ({
   },
   smallsearch: {
     position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade("#aaa", 0.15),
+    borderRadius: "10px",
+    border: "1px solid #D7DEF7",
+    backgroundColor: "white",
     "&:hover": {
-      backgroundColor: fade("#aaa", 0.25),
+      backgroundColor: "white",
       transition: ".3s ease all",
     },
     marginRight: theme.spacing(2),
@@ -67,13 +69,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: "#1C9295",
+    color: fade("#000", 0.58),
   },
   inputRoot: {
-    color: "#1C9295",
+    color: fade("#000", 0.58),
   },
   button: {
-    backgroundColor: "transparent",
+    backgroundColor: "white",
     border: "1px solid #1C9295",
     color: "#1C9295",
     boxShadow: "none",
@@ -89,15 +91,18 @@ const useStyles = makeStyles((theme) => ({
     color: "#aaa",
     boxShadow: "none",
     "&:hover": {
-      backgroundColor: "#efefef",
+      backgroundColor: "white",
       color: "black",
       textDecoration: "none",
+      transition: ".1s ease all",
+      boxShadow: "none",
     },
   },
   iconColor: {
-    color: "#42B4B7",
+    color: "#333",
     "&:hover": {
-      color: "#1C9295",
+      color: "#42B4B7",
+      transition: ".1s ease color",
     },
   },
   inputInput: {
@@ -236,7 +241,10 @@ export default function HeaderBar(props) {
           <div className="grow" />
 
           <div className={classes.sectionDesktop}>
-            <AddEmployeeButton classes={classes} noAddEmployee={props.noAddEmployee}/>
+            <AddEmployeeButton
+              classes={classes}
+              noAddEmployee={props.noAddEmployee}
+            />
 
             <IconButton
               aria-label="show new notifications"
@@ -481,9 +489,9 @@ export default function HeaderBar(props) {
 function AddEmployeeButton(props) {
   console.log("noaddemployee: " + props.noAddEmployee);
   if (props.noAddEmployee) {
-    return(<></>);
+    return <></>;
   }
-  return(
+  return (
     <Button
       className={props.classes.button}
       variant="contained"
