@@ -84,10 +84,10 @@ export default function EmployeeDetail(props) {
         <div className={(props.uid ? "pageWithNav " : "") + "userProfile"}>
           <div>
             <div className="sqContainer">
-              <img src={image} alt="user profile" />
+              <img src={image} alt="user profile"/>
             </div>
             <div>
-              <h1>{data.full_name} </h1>
+              <h2>{data.full_name} </h2>
 
               {/* <Row>
                 <Col>
@@ -123,7 +123,7 @@ export default function EmployeeDetail(props) {
 
               <List>
                 <ListItem>
-                  <ListItemIcon>
+                  <ListItemIcon className="pest">
                     <DesktopMacIcon />
                   </ListItemIcon>
                   <ListItemText primary={data.role} />

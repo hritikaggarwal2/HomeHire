@@ -519,7 +519,7 @@ ul {
 
     tr {
       margin: 25px 0;
-      background: #f4f4f4;
+      background: #F5F8FF;
       border-radius: 10px;
       border: 10px solid #fff;
 
@@ -533,18 +533,26 @@ ul {
 
 .userProfile {
   .sqContainer {
-    width: 250px !important;
-    height: 250px !important;
+    width: 130px !important;
+    height: 130px !important;
     border-radius: 100%;
     overflow: hidden;
-    margin: 20px;
-    flex: 0 0 250px;
+    margin: 0 4% 0% 6.5%;
+    flex: 0 0 130px;
+  }
+
+  .MuiListItemIcon-root {
+    min-width: 40px !important;
   }
 
   img {
     min-width: 100%;
     min-height: 100%;
     width: 100%;
+  }
+
+  h2 {
+    padding-left: 15px;
   }
 
   & > div {
