@@ -123,7 +123,7 @@ export default function EmployeeDetail(props) {
 
               <List>
                 <ListItem>
-                  <ListItemIcon>
+                  <ListItemIcon className="pest">
                     <DesktopMacIcon />
                   </ListItemIcon>
                   <ListItemText primary={data.role} />

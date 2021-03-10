@@ -519,7 +519,7 @@ ul {
 
     tr {
       margin: 25px 0;
-      background: #f4f4f4;
+      background: #F5F8FF;
       border-radius: 10px;
       border: 10px solid #fff;
 
@@ -539,6 +539,10 @@ ul {
     overflow: hidden;
     margin: 0 4% 0% 6.5%;
     flex: 0 0 130px;
+  }
+
+  .MuiListItemIcon-root {
+    min-width: 40px !important;
   }
 
   img {
