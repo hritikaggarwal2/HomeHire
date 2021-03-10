@@ -31,12 +31,12 @@ export default function ViewOffer(props) {
         <Text style={styles.text}>{props.date}</Text>
         <Text style={styles.text}>Dear {props.name},</Text>
         <Text style={styles.text}>
-          Reserved.ai is pleased to confirm our offer to you for a Principal
+          Minerva is pleased to confirm our offer to you, on behalf of Reserved.ai, for a Principal
           Engineer position, for you to work remotely from Vancouver, BC. Your
           anticipated start date will be {props.start}.
         </Text>
         <Text style={styles.text}>
-          Reserved.ai offers you compensation from your first working day
+          Your compensation will be from your first working day
           through your last working day as follows:
         </Text>
         <Text style={{ ...styles.listItem, ...styles.listItemFirst }}>
@@ -50,7 +50,7 @@ export default function ViewOffer(props) {
           4. Assistance with obtaining employment authorization, as required
         </Text>
         <Text style={styles.text}>
-          As an Intern, you are entitled to the Reserved.ai benefits as listed
+          As an Intern, you are entitled to selected benefits as listed
           above. By accepting this offer you fully understand and agree to the
           terms contained herein.
         </Text>
@@ -83,7 +83,7 @@ export default function ViewOffer(props) {
         </Text>
         <Text style={styles.text}>Sincerely,</Text>
         <Text style={styles.text}>Jane Doe</Text>
-        <Text style={styles.text}>Hiring Manager at Reserved.ai</Text>
+        <Text style={styles.text}>Hiring Manager at Minerva</Text>
       </Page>
     </Document>
   );
