@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 
+import minerva from "../data/Minerva.png";
+
 export default function NavBar(props) {
   return (
     <div className="nav-custom">
-      <h3>Minerva</h3>
+      <ul>
+      <li><img src={minerva} alt="Minerva" /></li>
       {props.type !== 2 ? (
-        <ul>
+        <>
           <li className={props.index === 0 ? "item-selected" : ""}>
             <Link to="./">Dashboard</Link>
           </li>
@@ -21,9 +24,9 @@ export default function NavBar(props) {
           <li className={props.index === 4 ? "item-selected" : ""}>
             <Link to="./settings">Preferences</Link>
           </li>
-        </ul>
+        </>
       ) : (
-        <ul>
+        <>
           <li className={props.index === 0 ? "item-selected" : ""}>
             <Link to="./">Dashboard</Link>
           </li>
@@ -42,8 +45,9 @@ export default function NavBar(props) {
           <li className={props.index === 5 ? "item-selected" : ""}>
             <Link to="./documents">Documents</Link>
           </li>
-        </ul>
+        </>
       )}
+      </ul>
     </div>
   );
 }

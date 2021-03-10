@@ -30,9 +30,9 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade("#5D576B", 0.15),
+    backgroundColor: fade("#aaa", 0.15),
     "&:hover": {
-      backgroundColor: fade("#5D576B", 0.25),
+      backgroundColor: fade("#aaa", 0.25),
       transition: ".3s ease all",
     },
     marginRight: theme.spacing(2),
@@ -46,9 +46,9 @@ const useStyles = makeStyles((theme) => ({
   smallsearch: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade("#5D576B", 0.15),
+    backgroundColor: fade("#aaa", 0.15),
     "&:hover": {
-      backgroundColor: fade("#5D576B", 0.25),
+      backgroundColor: fade("#aaa", 0.25),
       transition: ".3s ease all",
     },
     marginRight: theme.spacing(2),
@@ -67,19 +67,19 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: "#5D576B",
+    color: "#1C9295",
   },
   inputRoot: {
-    color: "#5D576B",
+    color: "#1C9295",
   },
   button: {
     backgroundColor: "transparent",
-    border: "1px solid #5D576B",
-    color: "#5D576B",
+    border: "1px solid #1C9295",
+    color: "#1C9295",
     boxShadow: "none",
     "&:hover": {
-      border: "1px solid #5D576B",
-      backgroundColor: "#5D576B",
+      border: "1px solid #1C9295",
+      backgroundColor: "#1C9295",
       color: "white",
     },
   },
@@ -95,9 +95,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   iconColor: {
-    color: "#5D576B",
+    color: "#42B4B7",
     "&:hover": {
-      color: "#383541",
+      color: "#1C9295",
     },
   },
   inputInput: {
@@ -307,6 +307,64 @@ export default function HeaderBar(props) {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
+
+          <div className={classes.sectionDesktop}>
+            <IconButton
+              aria-label="show new notifications"
+              color="inherit"
+              className={classes.iconColor}
+            >
+              <Badge badgeContent={3} color="secondary">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+            <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+              className={classes.iconColor}
+            >
+              <AccountCircle />
+            </IconButton>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
+    </>
+  ) : props.page === "employee" ? (
+    <>
+      <AppBar className="headerWithNav" position="static">
+        <Toolbar>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ "aria-label": "search" }}
+            />
+          </div>
+
+          <div className="grow" />
 
           <div className={classes.sectionDesktop}>
             <IconButton

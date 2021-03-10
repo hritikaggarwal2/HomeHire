@@ -52,7 +52,7 @@ export default function NewHireProfile() {
           </Col>
           <Col>
             <Form.Group>
-              <Form.Label><strong>Social Insurance Number (SIN)</strong></Form.Label>
+              <Form.Label><strong>Social Insurance Number (SIN) *</strong></Form.Label>
               <Form.Control type="name" placeholder="*** *** ***" />
             </Form.Group>
           </Col>
