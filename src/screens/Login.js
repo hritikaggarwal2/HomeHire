@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import firebase from "firebase/app";
 
@@ -9,6 +9,19 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
+
+  const db = firebase.firestore();
+
+  useEffect(() => {
+    db.collection("employees")
+      .doc("wm7Q1szTsUcBicfm0kYUAPL44Eh2")
+      .update({
+        isVerified: false,
+      })
+      .catch((error) => {
+        console.log("Error getting document:", error);
+      });
+  }, []);
 
   function createAccount(e) {
     e.preventDefault();
@@ -58,7 +71,7 @@ export default function Login() {
         />
 
         {error ? <Alert msg={error} /> : null}
-        <Button variant="primary" type="submit">
+        <Button className="nxt" type="submit">
           Secure Login
         </Button>
       </Form>

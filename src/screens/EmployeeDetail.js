@@ -84,7 +84,7 @@ export default function EmployeeDetail(props) {
         <div className={(props.uid ? "pageWithNav " : "") + "userProfile"}>
           <div>
             <div className="sqContainer">
-              <img src={image} alt="user profile"/>
+              <img src={image} alt="user profile" />
             </div>
             <div>
               <h2>{data.full_name} </h2>
@@ -124,19 +124,19 @@ export default function EmployeeDetail(props) {
               <List>
                 <ListItem>
                   <ListItemIcon className="pest">
-                    <DesktopMacIcon />
+                    <DesktopMacIcon className="colorDark" />
                   </ListItemIcon>
                   <ListItemText primary={data.role} />
                 </ListItem>
                 <ListItem>
                   <ListItemIcon>
-                    <MailOutlineIcon />
+                    <MailOutlineIcon className="colorDark" />
                   </ListItemIcon>
                   <ListItemText primary={data.email} />
                 </ListItem>
                 <ListItem>
                   <ListItemIcon>
-                    <LanguageIcon />
+                    <LanguageIcon className="colorDark" />
                   </ListItemIcon>
                   <ListItemText
                     primary={data.language.map((key, value) => {
@@ -148,13 +148,13 @@ export default function EmployeeDetail(props) {
                 </ListItem>
                 <ListItem>
                   <ListItemIcon>
-                    <LocationOnIcon />
+                    <LocationOnIcon className="colorDark" />
                   </ListItemIcon>
                   <ListItemText primary={data.city + ", " + data.province} />
                 </ListItem>
                 <ListItem>
                   <ListItemIcon>
-                    <QueryBuilderIcon />
+                    <QueryBuilderIcon className="colorDark" />
                   </ListItemIcon>
                   <ListItemText primary="Local Time: 10:00am, Wed, 24 Feb 2021" />
                 </ListItem>

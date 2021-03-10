@@ -14,7 +14,9 @@ const styles = StyleSheet.create({
 export default function GenerateOffer(props) {
   return (
     <div className="container offer-view">
-      <h3 className="text-center">Review the Offer Letter</h3>
+      <h3 className="text-center semi-bold header-color">
+        Review the Offer Letter
+      </h3>
       <PDFViewer className="pdf-viewer" style={styles.viewer}>
         <Offer date="March 10, 2021" name="Ryan" start="08/30/2021" />
       </PDFViewer>

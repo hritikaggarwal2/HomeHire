@@ -9,8 +9,6 @@ import Offer from "../components/Offer";
 import firebase from "firebase/app";
 import "firebase/firestore";
 
-import { EmployeeClassConverter } from "../data/EmployeeClass";
-
 const styles = StyleSheet.create({
   viewer: {
     width: "50vw",
@@ -21,8 +19,6 @@ const styles = StyleSheet.create({
 export default function ViewOffer(props) {
   const [check, isCheck] = useState(false);
   const db = firebase.firestore();
-
-  function back() {}
 
   function decline() {
     firebase
@@ -52,7 +48,9 @@ export default function ViewOffer(props) {
 
   return (
     <div className="container offer-view">
-      <h3 className="text-center">Please review and sign your Offer Letter!</h3>
+      <h3 className="text-center semi-bold header-color">
+        Please review and sign your Offer Letter!
+      </h3>
       <PDFViewer className="pdf-viewer" style={styles.viewer}>
         <Offer date="March 10, 2021" name="Ryan" start="08/30/2021" />
       </PDFViewer>
@@ -61,17 +59,18 @@ export default function ViewOffer(props) {
           defaultValue={check}
           onChange={() => isCheck(!check)}
           type="checkbox"
+          className=" semi-bold header-color"
           label="I have read and understand the above document"
         />
       </Form.Group>
-      <div className="button-container">
+      <div className="button-container allButtons">
         {/* <Button variant="outline-secondary" onClick={back}>
           Back
         </Button> */}
-        <Button variant="secondary" onClick={decline}>
+        <Button className="button bck" onClick={decline}>
           Decline
         </Button>
-        <Button variant="primary" onClick={accept}>
+        <Button className="button nxt" onClick={accept}>
           Accept and Continue
         </Button>
       </div>

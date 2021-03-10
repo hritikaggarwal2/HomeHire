@@ -60,17 +60,15 @@ ul {
 .headerWithNav {
   width: (100vw - $nav-size) !important;
   margin-left: $nav-size;
-  background-color: #fefefe !important;
+  background-color: $bg-light !important;
   box-shadow: 0px 0px 0px #aaa !important;
-  border-bottom: 1px solid #dfdfdf;
   padding: 10px 0;
 }
 
 .headerWithoutNav {
   width: 100vw !important;
-  background-color: #fefefe !important;
+  background-color: $bg-light !important;
   box-shadow: 0px 0px 0px #aaa !important;
-  border-bottom: 1px solid #dfdfdf;
   padding: 10px 0;
 }
 
@@ -91,6 +89,26 @@ ul {
     margin-top: 10px;
     margin-bottom: 20px;
   }
+}
+
+.top20 {
+  margin-top: 20px;
+}
+
+.semi-bold {
+  font-weight: 600 !important;
+}
+
+.header-color {
+  color: $header-color !important;
+}
+
+.align-center {
+  align-items: center !important;
+}
+
+.justify-space-between {
+  justify-content: space-between;
 }
 
 // NAV BAR
@@ -147,6 +165,17 @@ ul {
     margin-bottom: 10px;
   }
 
+  table {
+    tr {
+      line-height: 2rem;
+
+      td {
+        border: none;
+        flex-grow: 1;
+      }
+    }
+  }
+
   h1 {
     font-weight: bold;
     font-size: 32px;
@@ -171,13 +200,13 @@ ul {
   }
 
   .container {
-    max-width: 90%
+    max-width: 90%;
   }
 
   .card {
     box-shadow: 2px 2px 5px $gray-light;
     padding: 20px;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     // margin-top: 32px;
   }
 
@@ -196,6 +225,30 @@ ul {
 
   .react-calendar {
     border: none;
+  }
+
+  .react-calendar__tile--now {
+    background: $bg !important;
+
+    :enabled:hover,
+    :enabled:focus,
+    :enabled,
+    :focus,
+    :hover {
+      background: $bg !important;
+    }
+  }
+
+  .react-calendar__tile--active {
+    background: $teal-dark !important;
+
+    :enabled:hover,
+    :enabled:focus,
+    :enabled,
+    :focus,
+    :hover {
+      background: $teal-dark !important;
+    }
   }
 
   .dashboard-title {
@@ -220,17 +273,20 @@ ul {
   }
 
   table thead tr {
-    background: #ddd;
+    background: $bg;
   }
 
   table tbody tr {
     cursor: pointer;
-    background-color: #f4f4f4;
 
     &:hover {
-      background-color: $primary-light;
+      background-color: $bg;
     }
   }
+}
+
+.colorDark {
+  color: $teal;
 }
 
 .container {
@@ -252,8 +308,24 @@ ul {
   margin: 0 auto 50px auto;
 }
 
+.payrollBtns {
+  display: flex;
+  justify-content: flex-start;
+
+  button {
+    margin: 0 12px 24px 12px;
+  }
+}
+
 .addEmp {
   margin-top: 2%;
+
+  :first-child {
+    a,
+    span {
+      line-height: 30px !important;
+    }
+  }
 
   h1 {
     color: $primary;
@@ -277,13 +349,12 @@ ul {
     margin-top: 25px;
     font-weight: 600;
   }
-  
+
   h5 {
     font-size: 15px;
     color: $gray;
     font-weight: 600;
   }
-
 
   .newHireStartContainer p {
     border: 1px solid #ced4da;
@@ -335,9 +406,12 @@ ul {
     font-weight: bold;
   }
 
-  button.check:hover {
-    background: $teal-dark;
+  button.check:hover,
+  button.check:active,
+  button.check:focus {
+    background: $teal-dark !important;
     color: white;
+    border: 2px solid $teal-dark !important;
   }
 
   button a {
@@ -349,9 +423,12 @@ ul {
     color: $white;
   }
 
-  button.nxt:hover {
-    background: $teal-dark;
+  button.nxt:hover,
+  button.nxt:active,
+  button.nxt:focus {
+    background: $teal-dark !important;
     color: white;
+    border: 2px solid $teal-dark !important;
   }
 
   button.bck {
@@ -362,13 +439,18 @@ ul {
     font-weight: bold;
   }
 
-  button.bck:hover {
-    background: $teal-dark;
+  button.bck:hover,
+  button.bck:active,
+  button.bck:focus {
+    background: $teal-dark !important;
     color: white;
+    border: 2px solid $teal-dark !important;
   }
 
   .benefits {
     .bencard {
+      border-radius: 12px;
+
       .bencardhead {
         padding-left: 20px;
         margin: 0;
@@ -458,15 +540,23 @@ ul {
     .docreview {
       background-color: $gray-light;
       border-radius: 15px;
+
+      h4.extra-spacing {
+        padding: 25px;
+      }
     }
 
     h4 {
       margin: 0;
-      padding: 10px;
+      padding: 10px 15px 5px 15px;
     }
 
     .doccard {
       margin-bottom: 20px;
+
+      .row {
+        margin: 10px;
+      }
 
       img {
         height: 250px;
@@ -475,9 +565,10 @@ ul {
       }
 
       h5 {
-        padding-left: 10px;
+        padding-left: 15px;
         font-size: 15px;
         color: $primary-dark;
+        font-weight: 400;
       }
 
       a {
@@ -519,7 +610,7 @@ ul {
 
     tr {
       margin: 25px 0;
-      background: #F5F8FF;
+      background: #f5f8ff;
       border-radius: 10px;
       border: 10px solid #fff;
 
@@ -528,6 +619,54 @@ ul {
         flex-grow: 1;
       }
     }
+  }
+}
+
+.offer-view,
+.Login,
+.SignUp {
+  .allButtons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 50px;
+  }
+
+  .button {
+    line-height: 30px;
+    border: 2px solid #ccc;
+  }
+
+  button.nxt {
+    min-width: 150px;
+    border: 2px solid $primary;
+    background: $primary;
+    color: white;
+    font-weight: bold;
+  }
+
+  button.nxt:hover,
+  button.nxt:focus,
+  button.nxt:active,
+  .btn-primary.focus {
+    background: $teal-dark !important;
+    color: white;
+    border: 2px solid $teal-dark !important;
+  }
+
+  button.bck {
+    min-width: 150px;
+    border: 2px solid $primary;
+    background: transparent;
+    color: $primary;
+    font-weight: bold;
+  }
+
+  button.bck:hover,
+  button.bck:focus {
+    background: $teal-dark !important;
+    border: 2px solid $teal-dark !important;
+    color: white;
   }
 }
 

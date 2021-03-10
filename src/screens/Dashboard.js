@@ -59,7 +59,7 @@ function DashboardContent(props) {
     return (
       <div className="pageWithNav dashboard">
         <Container>
-          <h1 class="top32 dashboard-title" >Dashboard</h1>
+          <h1 class="top32 dashboard-title">Dashboard</h1>
           {/* top card of the dashboard */}
           <Card className="  top10">
             <Row>
@@ -88,7 +88,7 @@ function DashboardContent(props) {
             </Col>
             <Col>
               <OnboardingCard />
-              <NotificationsCard className="top32"/>
+              <NotificationsCard className="top32" />
             </Col>
           </Row>
         </Container>
@@ -111,15 +111,25 @@ function DashboardContent(props) {
             <Col xs={12} sm={6}>
               <Card className="  full-height">
                 <Card.Body>
-                  <Card.Title>Things to do (2)</Card.Title>
+                  <Card.Title className="semi-bold header-color">
+                    Things to do (2)
+                  </Card.Title>
                   <ListGroup variant="flush">
                     <ListGroup.Item action className="button-list-item">
                       Review and sign offer letter by the 22nd
-                      <Button href="/documents" variant="outline-dark" size="sm">View</Button>
+                      <Button
+                        href="/documents"
+                        variant="outline-dark"
+                        size="sm"
+                      >
+                        View
+                      </Button>
                     </ListGroup.Item>
                     <ListGroup.Item action className="button-list-item">
                       Fill out remaining profile information
-                      <Button href="/profile" variant="outline-dark" size="sm">View</Button>
+                      <Button href="/profile" variant="outline-dark" size="sm">
+                        View
+                      </Button>
                     </ListGroup.Item>
                     <ListGroup.Item disabled className="button-list-item">
                       View onboarding documents (sign offer first)
@@ -136,7 +146,9 @@ function DashboardContent(props) {
             <Col xs={12} sm={6}>
               <Card className="  full-height">
                 <Card.Body>
-                  <Card.Title>What's new</Card.Title>
+                  <Card.Title className="semi-bold header-color">
+                    What's new
+                  </Card.Title>
                   <ListGroup variant="flush">
                     <ListGroup.Item>
                       3 new documents are available to view
@@ -160,7 +172,9 @@ function PayrollCard(props) {
   return (
     <Card className="full-height">
       <Card.Body>
-        <Card.Title>Payroll for March 2021</Card.Title>
+        <Card.Title className="semi-bold header-color">
+          Payroll for March 2021
+        </Card.Title>
         <Table hover size="sm">
           <thead>
             <tr>
@@ -205,7 +219,9 @@ function OnboardingCard(props) {
     <Card className=" ">
       <Card.Body>
         <Row>
-          <Card.Title>Onboarding Status</Card.Title>
+          <Card.Title className="semi-bold header-color">
+            Onboarding Status
+          </Card.Title>
           <Table hover size="sm">
             <thead>
               <tr>
@@ -254,7 +270,9 @@ function NotificationsCard(props) {
   return (
     <Card className={props.className}>
       <Card.Body>
-        <Card.Title>Notifications</Card.Title>
+        <Card.Title className="semi-bold header-color">
+          Notifications
+        </Card.Title>
         <ListGroup variant="flush">
           <ListGroup.Item action>
             Minerva is expanding to Ontario in ...
